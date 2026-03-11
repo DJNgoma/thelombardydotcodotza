@@ -1,0 +1,407 @@
+@import "tailwindcss";
+
+:root {
+  --color-canvas: #f4f1eb;
+  --color-surface-card: rgba(255, 255, 255, 0.78);
+  --color-surface-panel: rgba(255, 255, 255, 0.86);
+  --color-surface-feature: rgba(255, 255, 255, 0.94);
+  --color-stone: #d7cec1;
+  --color-stone-deep: #b7ab9b;
+  --color-sage: #728270;
+  --color-sage-deep: #465446;
+  --color-ink: #1f2421;
+  --color-ink-soft: #57615a;
+  --color-line: rgba(69, 84, 69, 0.14);
+  --color-line-strong: rgba(69, 84, 69, 0.2);
+  --color-gold: #a89468;
+  --color-on-light: #1f2421;
+  --color-on-light-muted: #57615a;
+  --color-on-dark: #fbf8f2;
+  --color-on-dark-muted: rgba(251, 248, 242, 0.84);
+  --color-on-dark-label: rgba(251, 248, 242, 0.72);
+  --shadow-card: 0 16px 34px rgba(39, 44, 39, 0.07);
+  --shadow-panel: 0 22px 46px rgba(39, 44, 39, 0.08);
+  --shadow-feature: 0 30px 72px rgba(39, 44, 39, 0.1);
+  --radius-inset: 1.3rem;
+  --radius-card: 1.7rem;
+  --radius-panel: 2.05rem;
+  --radius-feature: 2.45rem;
+  --content-max: 78rem;
+  --tracking-ui: 0.14em;
+  --tracking-eyebrow: 0.18em;
+  --space-section: clamp(2.9rem, 5.6vw, 5.1rem);
+  --space-section-tight: clamp(2.1rem, 3.9vw, 3.25rem);
+  --space-page-lead-top: clamp(1rem, 2.2vw, 1.4rem);
+  --space-page-lead-bottom: clamp(2.55rem, 4.8vw, 4.1rem);
+  --space-hero-bottom: clamp(2.7rem, 4.9vw, 4.35rem);
+  --header-offset-mobile: 6.15rem;
+  --header-offset-desktop: 6.25rem;
+}
+
+@theme inline {
+  --color-background: var(--color-canvas);
+  --color-foreground: var(--color-ink);
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-cormorant);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(169, 190, 170, 0.22), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(201, 185, 160, 0.18), transparent 30%),
+    var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-manrope), sans-serif;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(116, 138, 114, 0.22);
+}
+
+.site-main {
+  padding-top: calc(var(--header-offset-mobile) + 0.25rem);
+}
+
+.page-shell {
+  margin-inline: auto;
+  width: min(100% - clamp(1rem, 3vw, 2rem), var(--content-max));
+}
+
+.section-space {
+  padding-block: var(--space-section);
+}
+
+.section-space-tight {
+  padding-block: var(--space-section-tight);
+}
+
+.section-space-end {
+  padding-bottom: var(--space-section);
+}
+
+.section-space-end-tight {
+  padding-bottom: var(--space-section-tight);
+}
+
+.page-lead-space {
+  padding-top: var(--space-page-lead-top);
+  padding-bottom: var(--space-page-lead-bottom);
+}
+
+.hero-space {
+  padding-top: 0.35rem;
+  padding-bottom: var(--space-hero-bottom);
+}
+
+.soft-card {
+  border: 1px solid var(--color-line);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), var(--color-surface-card));
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(18px);
+  transition:
+    transform 240ms ease,
+    border-color 240ms ease,
+    box-shadow 240ms ease,
+    background-color 240ms ease;
+}
+
+.surface-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), var(--color-surface-card));
+  box-shadow: var(--shadow-card);
+}
+
+.surface-panel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.95), var(--color-surface-panel));
+  box-shadow: var(--shadow-panel);
+}
+
+.surface-feature {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), var(--color-surface-feature));
+  box-shadow: var(--shadow-feature);
+}
+
+.radius-card {
+  border-radius: var(--radius-card);
+}
+
+.radius-panel {
+  border-radius: var(--radius-panel);
+}
+
+.radius-feature {
+  border-radius: var(--radius-feature);
+}
+
+.radius-inset {
+  border-radius: var(--radius-inset);
+}
+
+.inset-surface {
+  border: 1px solid var(--color-line);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.inset-dashed {
+  border-style: dashed;
+}
+
+.accent-surface {
+  border-color: rgba(31, 36, 33, 0.16);
+  background-color: var(--color-sage-deep);
+  color: var(--color-on-dark);
+  box-shadow: 0 12px 26px rgba(70, 84, 70, 0.16);
+}
+
+.eyebrow {
+  color: var(--color-sage-deep);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+}
+
+.display-title {
+  font-family: var(--font-cormorant), serif;
+  letter-spacing: -0.03em;
+}
+
+.display-hero {
+  font-size: clamp(3.1rem, 7.6vw, 6.45rem);
+  line-height: 0.92;
+}
+
+.display-page {
+  font-size: clamp(2.55rem, 5.1vw, 4.9rem);
+  line-height: 0.94;
+}
+
+.display-section {
+  font-size: clamp(2rem, 3.6vw, 3.1rem);
+  line-height: 0.96;
+}
+
+/* Light-surface copy only. Dark and image-backed surfaces use text-on-dark*. */
+.body-copy-lg {
+  color: var(--color-on-light-muted);
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  line-height: 1.78;
+}
+
+.body-copy {
+  color: var(--color-on-light-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.body-copy-sm {
+  color: var(--color-on-light-muted);
+  font-size: 0.95rem;
+  line-height: 1.72;
+}
+
+.text-on-light {
+  color: var(--color-on-light);
+}
+
+.text-on-light-muted {
+  color: var(--color-on-light-muted);
+}
+
+.text-on-dark {
+  color: var(--color-on-dark);
+}
+
+.text-on-dark-muted {
+  color: var(--color-on-dark-muted);
+}
+
+.text-on-dark-label {
+  color: var(--color-on-dark-label);
+}
+
+.meta-label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-ui);
+  text-transform: uppercase;
+}
+
+.section-rule {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(69, 84, 69, 0), rgba(69, 84, 69, 0.18), rgba(69, 84, 69, 0));
+}
+
+.breadcrumb-shell {
+  padding-top: clamp(0.85rem, 1.8vw, 1rem);
+  padding-bottom: clamp(0.8rem, 1.8vw, 1.25rem);
+}
+
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-ink-soft);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-ui);
+  text-transform: uppercase;
+}
+
+.mdx {
+  color: var(--color-ink-soft);
+  font-size: 1.04rem;
+  line-height: 1.85;
+}
+
+.mdx h2,
+.mdx h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-ink);
+  font-family: var(--font-cormorant), serif;
+  line-height: 1.1;
+}
+
+.mdx h2 {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+}
+
+.mdx h3 {
+  font-size: clamp(1.55rem, 2.3vw, 2rem);
+}
+
+.mdx p,
+.mdx ul,
+.mdx ol,
+.mdx blockquote {
+  margin-block: 1rem;
+}
+
+.mdx ul,
+.mdx ol {
+  padding-left: 1.2rem;
+}
+
+.mdx li + li {
+  margin-top: 0.55rem;
+}
+
+.mdx strong {
+  color: var(--color-ink);
+}
+
+.mdx blockquote {
+  border-left: 2px solid rgba(114, 130, 112, 0.32);
+  padding-left: 1rem;
+  color: var(--color-ink);
+}
+
+.noise-overlay {
+  position: relative;
+}
+
+.noise-overlay::before {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  content: "";
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.balanced-text {
+  text-wrap: balance;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-sage-deep);
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: color 240ms ease;
+}
+
+.text-link:hover {
+  color: var(--color-ink);
+}
+
+.interactive-lift:hover {
+  transform: translateY(-2px);
+}
+
+.sticky-page-aside {
+  top: calc(var(--header-offset-desktop) + 1rem);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(70, 84, 70, 0.42);
+  outline-offset: 3px;
+}
+
+@media (min-width: 768px) {
+  .site-main {
+    padding-top: calc(var(--header-offset-desktop) + 0.1rem);
+  }
+
+  .hero-space {
+    padding-top: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
