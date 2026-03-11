@@ -20,13 +20,21 @@ export const metadata: Metadata = buildPageMetadata({
 export default async function HomePage() {
   const [featuredNotices, latestNotices] = await Promise.all([
     getFeaturedNotices(1),
-    getLatestNotices(3),
+    getLatestNotices(4),
   ]);
+  const featuredNotice = featuredNotices[0];
+  const homepageNotices = latestNotices
+    .filter((notice) => notice.slug !== featuredNotice?.slug)
+    .slice(0, 3);
 
   return (
     <>
-      <HeroEstate featuredNotice={featuredNotices[0]} />
-      <NoticeCardGrid notices={latestNotices} variant="featured" tone="dark" />
+      <HeroEstate featuredNotice={featuredNotice} />
+      <NoticeCardGrid
+        notices={homepageNotices}
+        title="Recent notices and estate updates"
+        description="Meeting notices, maintenance work, levy communication, and estate updates are published here for owners and residents."
+      />
       <LifestyleAmenities />
       <GovernanceSnapshot />
       <ManagementPanel />
