@@ -51,10 +51,10 @@ export function InstagramStrip() {
   return (
     <section className="section-space">
       <div className="page-shell">
-        <div className="grid gap-5 xl:grid-cols-[0.8fr_1.2fr]">
-          <div className="soft-card surface-feature radius-feature overflow-hidden p-3">
+        <div className="grid gap-5 xl:grid-cols-[0.74fr_1.26fr]">
+          <div className="soft-card surface-stone radius-feature overflow-hidden p-3">
             <div className="grid gap-3 lg:grid-rows-[0.9fr_auto]">
-              <div className="radius-panel relative min-h-[15rem] overflow-hidden lg:min-h-[18rem]">
+              <div className="radius-panel relative min-h-[15rem] overflow-hidden lg:min-h-[22rem]">
                 <Image
                   src="/images/inspiration/garden-walkway.jpg"
                   alt="Residential garden walkway reference."
@@ -75,7 +75,7 @@ export function InstagramStrip() {
             </div>
           </div>
 
-          <div className="grid gap-5 xl:grid-cols-[1.08fr_0.92fr]">
+          <div className="grid gap-5 xl:grid-cols-[1.14fr_0.86fr]">
             <GalleryCard post={featuredPost} featured />
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-1">
               {supportingPosts.map((post) => (

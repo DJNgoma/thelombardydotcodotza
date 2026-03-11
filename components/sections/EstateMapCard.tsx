@@ -6,7 +6,7 @@ export function EstateMapCard() {
   return (
     <section className="section-space">
       <div className="page-shell">
-        <div className="grid gap-5 lg:grid-cols-[0.86fr_1.14fr]">
+        <div className="grid gap-5 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="soft-card surface-feature radius-feature px-6 py-7 sm:px-8 sm:py-8">
             <SectionHeading
               eyebrow="Location"
@@ -58,7 +58,7 @@ export function EstateMapCard() {
             <iframe
               title="Estate location"
               src={siteConfig.googleMapsEmbedUrl}
-              className="radius-panel min-h-[28rem] w-full border-0"
+              className="radius-panel min-h-[28rem] w-full border-0 xl:min-h-[32rem]"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />

@@ -52,7 +52,7 @@ export function NearbyAmenities({ compact = false }: NearbyAmenitiesProps) {
 
           <div
             className={`mt-10 grid gap-5 ${
-              compact ? "xl:grid-cols-[0.86fr_1.14fr]" : "lg:grid-cols-[0.8fr_1.2fr]"
+              compact ? "xl:grid-cols-[0.92fr_1.08fr]" : "lg:grid-cols-[0.78fr_1.22fr]"
             }`}
           >
             {compact ? (
@@ -89,7 +89,7 @@ export function NearbyAmenities({ compact = false }: NearbyAmenitiesProps) {
 
             <div
               className={`grid gap-5 ${
-                compact ? "md:grid-cols-3" : "md:grid-cols-2 xl:grid-cols-3"
+                compact ? "md:grid-cols-3 xl:gap-4" : "md:grid-cols-2 xl:grid-cols-3"
               }`}
             >
               {groups.map((group) => (
