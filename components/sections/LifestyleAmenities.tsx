@@ -82,35 +82,44 @@ export function LifestyleAmenities() {
           </article>
         </div>
 
-        <div className="mt-5 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-5 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <article className="soft-card surface-dark radius-card overflow-hidden p-3">
+            <div className="radius-panel overflow-hidden">
+              <div className="relative min-h-[15rem] overflow-hidden">
+                <Image
+                  src="/images/inspiration/garden-walkway.jpg"
+                  alt="Residential garden walkway reference."
+                  fill
+                  sizes="(max-width: 1279px) 100vw, 28vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(18,24,20,0.62)] via-transparent to-transparent" />
+              </div>
+              <div className="px-4 py-4">
+                <p className="meta-label text-on-dark-label">
+                  Residential setting
+                </p>
+                <p className="mt-3 text-sm leading-7 text-on-dark-muted">
+                  Landscaped edges and quieter pedestrian routes shape the broader residential mood residents expect from managed estate living.
+                </p>
+              </div>
+            </div>
+          </article>
+
           {amenities.slice(2).map((amenity, index) => (
             <article
               key={amenity.title}
               className={`soft-card ${
-                index === 0 ? "surface-dark" : "surface-card"
+                index === 0 ? "surface-stone" : "surface-card"
               } radius-card p-5 sm:p-7`}
             >
-              <p
-                className={`meta-label ${
-                  index === 0
-                    ? "text-on-dark-label"
-                    : "text-[var(--color-sage-deep)]"
-                }`}
-              >
+              <p className="meta-label text-[var(--color-sage-deep)]">
                 {amenity.title}
               </p>
-              <p
-                className={`mt-4 text-base leading-7 ${
-                  index === 0 ? "text-on-dark-muted" : "text-[var(--color-ink-soft)]"
-                }`}
-              >
+              <p className="mt-4 text-base leading-7 text-[var(--color-ink-soft)]">
                 {amenity.summary}
               </p>
-              <p
-                className={`mt-6 text-sm leading-7 ${
-                  index === 0 ? "text-on-dark" : "text-[var(--color-ink)]"
-                }`}
-              >
+              <p className="mt-6 text-sm leading-7 text-[var(--color-ink)]">
                 {amenity.highlight}
               </p>
             </article>

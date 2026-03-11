@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { nearbyAmenities } from "@/content/nearby";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -55,20 +56,34 @@ export function NearbyAmenities({ compact = false }: NearbyAmenitiesProps) {
             }`}
           >
             {compact ? (
-              <article className="band-support-card radius-panel px-6 py-6 sm:px-7">
-                <p className="meta-label text-on-dark-label">
-                  Everyday catchment
-                </p>
-                <p className="mt-4 text-xl leading-8 text-on-dark">
-                  The estate is positioned within an established northern
-                  Johannesburg catchment that supports everyday residential
-                  living.
-                </p>
-                <p className="mt-5 text-sm leading-7 text-on-dark-muted sm:text-base">
-                  Nearby schools, shopping, healthcare, and leisure anchors add
-                  practical convenience without changing the estate’s calm,
-                  residential character.
-                </p>
+              <article className="soft-card surface-card radius-feature overflow-hidden p-3">
+                <div className="grid gap-3 lg:grid-rows-[1.12fr_auto]">
+                  <div className="radius-panel relative min-h-[18rem] overflow-hidden lg:min-h-[24rem]">
+                    <Image
+                      src="/images/inspiration/courtyard-garden.jpg"
+                      alt="Landscaped residential courtyard reference."
+                      fill
+                      sizes="(max-width: 1279px) 100vw, 38vw"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[rgba(18,24,20,0.34)] via-transparent to-transparent" />
+                  </div>
+                  <div className="band-support-card radius-panel px-6 py-6 sm:px-7">
+                    <p className="meta-label text-on-dark-label">
+                      Everyday catchment
+                    </p>
+                    <p className="mt-4 text-xl leading-8 text-on-dark">
+                      The estate is positioned within an established northern
+                      Johannesburg catchment that supports everyday residential
+                      living.
+                    </p>
+                    <p className="mt-5 text-sm leading-7 text-on-dark-muted sm:text-base">
+                      Nearby schools, shopping, healthcare, and leisure anchors add
+                      practical convenience without changing the estate’s calm,
+                      residential character.
+                    </p>
+                  </div>
+                </div>
               </article>
             ) : null}
 

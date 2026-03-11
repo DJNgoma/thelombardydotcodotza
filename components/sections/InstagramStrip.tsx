@@ -60,21 +60,35 @@ export function InstagramStrip() {
     <section className="section-space">
       <div className="page-shell">
         <div className="grid gap-5 xl:grid-cols-[0.8fr_1.2fr]">
-          <div className="soft-card surface-feature radius-feature px-6 py-7 sm:px-10 sm:py-10">
-            <SectionHeading
-              eyebrow="Estate gallery"
-              title="A closer look at the buildings, shared spaces, and residential setting."
-              description="The visual character of the estate is shaped by its internal layout, modern apartment buildings, and the shared amenities residents use every day."
-              maxWidth="wide"
-            />
-            <a
-              href={featuredPost.href}
-              target="_blank"
-              rel="noreferrer"
-              className="text-link mt-8"
-            >
-              View The Luxury Lombardy profile
-            </a>
+          <div className="soft-card surface-feature radius-feature overflow-hidden p-3">
+            <div className="grid gap-3 lg:grid-rows-[0.9fr_auto]">
+              <div className="radius-panel relative min-h-[15rem] overflow-hidden lg:min-h-[18rem]">
+                <Image
+                  src="/images/inspiration/garden-walkway.jpg"
+                  alt="Residential garden walkway reference."
+                  fill
+                  sizes="(max-width: 1279px) 100vw, 33vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(18,24,20,0.3)] via-transparent to-transparent" />
+              </div>
+              <div className="px-3 pb-3 sm:px-4 sm:pb-4">
+                <SectionHeading
+                  eyebrow="Estate gallery"
+                  title="A closer look at the buildings, shared spaces, and residential setting."
+                  description="The visual character of the estate is shaped by its internal layout, modern apartment buildings, and the shared amenities residents use every day."
+                  maxWidth="wide"
+                />
+                <a
+                  href={featuredPost.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-link mt-8"
+                >
+                  View The Luxury Lombardy profile
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="grid gap-5 xl:grid-cols-[1.08fr_0.92fr]">

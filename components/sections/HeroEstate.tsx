@@ -35,9 +35,10 @@ export function HeroEstate({ featuredNotice }: HeroEstateProps) {
   return (
     <section className="hero-space">
       <div className="page-shell">
-        <div className="grid items-stretch gap-5 xl:grid-cols-[0.78fr_1.22fr]">
-          <div className="soft-card surface-feature noise-overlay radius-feature relative overflow-hidden px-6 py-7 sm:px-10 sm:py-10">
-            <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-br from-[rgba(169,190,170,0.14)] via-transparent to-transparent" />
+        <div className="grid items-stretch gap-5 xl:grid-cols-[0.68fr_1.32fr]">
+          <div className="soft-card surface-stone noise-overlay radius-feature relative overflow-hidden px-6 py-7 sm:px-10 sm:py-10">
+            <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-br from-[rgba(169,190,170,0.16)] via-transparent to-transparent" />
+            <div className="absolute -right-14 bottom-10 h-44 w-44 rounded-full bg-[rgba(118,136,116,0.08)] blur-3xl" />
             <Pill>Secure, managed, residential</Pill>
             <h1 className="display-title display-hero balanced-text text-on-light mt-5 max-w-[10ch] font-semibold sm:mt-6">
               Estate living shaped by calm, order, and belonging.
