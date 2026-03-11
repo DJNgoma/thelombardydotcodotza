@@ -87,8 +87,8 @@ export function LifestyleAmenities() {
             <div className="radius-panel overflow-hidden">
               <div className="relative min-h-[15rem] overflow-hidden">
                 <Image
-                  src="/images/inspiration/garden-walkway.jpg"
-                  alt="Residential garden walkway reference."
+                  src="/images/estate/hero-exterior.webp"
+                  alt="Residential courtyard and shared green at an apartment-style estate."
                   fill
                   sizes="(max-width: 1279px) 100vw, 28vw"
                   className="object-cover"
@@ -100,7 +100,7 @@ export function LifestyleAmenities() {
                   Residential setting
                 </p>
                 <p className="mt-3 text-sm leading-7 text-on-dark-muted">
-                  Landscaped edges and quieter pedestrian routes shape the broader residential mood residents expect from managed estate living.
+                  Residential greens and internal courtyards help shape a calmer shared environment around the estate’s amenity spaces.
                 </p>
               </div>
             </div>

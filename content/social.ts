@@ -2,24 +2,24 @@ import type { SocialPost } from "@/lib/types";
 
 export const estateGalleryPosts: SocialPost[] = [
   {
-    id: "arrival-court",
-    title: "Estate overview",
+    id: "landscaped-setting",
+    title: "Landscaped setting",
     summary:
-      "Aerial views show the scale of the estate, its internal layout, and the shared spaces residents use every day.",
-    image: "/images/estate/estate-aerial-clean.jpg",
+      "Landscaped edges and internal garden spaces reinforce the estate’s calmer residential tone.",
+    image: "/images/inspiration/courtyard-garden.jpg",
   },
   {
-    id: "courtyard-clean",
-    title: "Residential frontage",
+    id: "outdoor-gathering",
+    title: "Outdoor gathering",
     summary:
-      "The residential buildings reflect the estate’s modern character and managed streetscape.",
-    image: "/images/estate/estate-courtyard-clean.jpg",
+      "Shared braai and patio settings support relaxed, considerate use by residents and their guests.",
+    image: "/images/inspiration/braai-firepit.webp",
   },
   {
-    id: "pool-corner",
-    title: "Pool and clubhouse",
+    id: "wellness-space",
+    title: "Wellness space",
     summary:
-      "The pool and clubhouse remain part of the estate’s everyday amenity offering.",
-    image: "/images/estate/pool-from-newsletter.png",
+      "A modern gym environment reflects the estate’s focus on practical everyday amenities.",
+    image: "/images/inspiration/gym-interior.webp",
   },
 ];
