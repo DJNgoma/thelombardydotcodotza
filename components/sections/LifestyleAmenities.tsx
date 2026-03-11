@@ -106,22 +106,35 @@ export function LifestyleAmenities() {
             </div>
           </article>
 
-          {amenities.slice(2).map((amenity, index) => (
+          {amenities.slice(2).map((amenity) => (
             <article
               key={amenity.title}
-              className={`soft-card ${
-                index === 0 ? "surface-stone" : "surface-card"
-              } radius-card p-5 sm:p-7`}
+              className="soft-card surface-card radius-card overflow-hidden p-3"
             >
-              <p className="meta-label text-[var(--color-sage-deep)]">
-                {amenity.title}
-              </p>
-              <p className="mt-4 text-base leading-7 text-[var(--color-ink-soft)]">
-                {amenity.summary}
-              </p>
-              <p className="mt-6 text-sm leading-7 text-[var(--color-ink)]">
-                {amenity.highlight}
-              </p>
+              <div className="radius-panel overflow-hidden">
+                {amenity.image ? (
+                  <div className="relative min-h-[15rem] overflow-hidden">
+                    <Image
+                      src={amenity.image}
+                      alt={amenity.alt ?? amenity.title}
+                      fill
+                      sizes="(max-width: 1279px) 100vw, 28vw"
+                      className="object-cover"
+                    />
+                  </div>
+                ) : null}
+                <div className="surface-panel border-t border-[var(--color-line)] px-4 py-4">
+                  <p className="meta-label text-[var(--color-sage-deep)]">
+                    {amenity.title}
+                  </p>
+                  <p className="mt-3 text-sm leading-7 text-[var(--color-ink-soft)]">
+                    {amenity.summary}
+                  </p>
+                  <p className="mt-5 text-sm leading-7 text-[var(--color-ink)]">
+                    {amenity.highlight}
+                  </p>
+                </div>
+              </div>
             </article>
           ))}
         </div>

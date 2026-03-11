@@ -219,9 +219,9 @@ svg {
 }
 
 .brand-wordmark {
-  font-family: var(--font-lobster), cursive;
+  font-family: var(--font-grand-hotel), cursive;
   font-weight: 400;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.005em;
   line-height: 0.9;
 }
 

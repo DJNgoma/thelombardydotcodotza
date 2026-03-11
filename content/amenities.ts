@@ -18,11 +18,15 @@ export const amenities: Amenity[] = [
     summary:
       "Informal outdoor amenity spaces designed for respectful, well-managed social use.",
     highlight: "Shared use is guided by estate standards and booking procedures.",
+    image: "/images/inspiration/braai-firepit.webp",
+    alt: "Outdoor braai and fire-pit style seating area reference.",
   },
   {
     title: "Gym",
     summary:
       "A practical wellness facility supported by ongoing equipment maintenance and upkeep.",
     highlight: "Routine servicing helps keep the facility safe and functional.",
+    image: "/images/inspiration/gym-interior.webp",
+    alt: "Modern apartment-style gym interior reference.",
   },
 ];

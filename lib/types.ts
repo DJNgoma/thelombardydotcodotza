@@ -38,6 +38,8 @@ export interface Amenity {
   title: string;
   summary: string;
   highlight: string;
+  image?: string;
+  alt?: string;
 }
 
 export interface SocialPost {

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Lobster, Manrope } from "next/font/google";
+import { Cormorant_Garamond, Grand_Hotel, Manrope } from "next/font/google";
 import "./globals.css";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
@@ -19,8 +19,8 @@ const cormorant = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
 });
 
-const lobster = Lobster({
-  variable: "--font-lobster",
+const grandHotel = Grand_Hotel({
+  variable: "--font-grand-hotel",
   subsets: ["latin"],
   weight: "400",
 });
@@ -87,7 +87,7 @@ export default function RootLayout({
   return (
     <html lang="en-ZA">
       <body
-        className={`${manrope.variable} ${cormorant.variable} ${lobster.variable} antialiased`}
+        className={`${manrope.variable} ${cormorant.variable} ${grandHotel.variable} antialiased`}
       >
         <StructuredData data={[organizationSchema(), websiteSchema()]} />
         <div className="relative flex min-h-screen flex-col">
