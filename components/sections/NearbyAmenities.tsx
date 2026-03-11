@@ -56,7 +56,7 @@ export function NearbyAmenities({ compact = false }: NearbyAmenitiesProps) {
             }`}
           >
             {compact ? (
-              <article className="soft-card surface-card radius-feature overflow-hidden p-3">
+              <article className="soft-card surface-dark radius-feature overflow-hidden p-3">
                 <div className="grid gap-3 lg:grid-rows-[1.12fr_auto]">
                   <div className="radius-panel relative min-h-[18rem] overflow-hidden lg:min-h-[24rem]">
                     <Image
