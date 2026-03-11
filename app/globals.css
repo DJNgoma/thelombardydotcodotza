@@ -218,6 +218,13 @@ svg {
   letter-spacing: -0.03em;
 }
 
+.brand-wordmark {
+  font-family: var(--font-lobster), cursive;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 0.9;
+}
+
 .display-hero {
   font-size: clamp(2.85rem, 6.25vw, 5.55rem);
   line-height: 0.94;

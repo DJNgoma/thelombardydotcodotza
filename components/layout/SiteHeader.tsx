@@ -36,7 +36,7 @@ export function SiteHeader() {
               <span className="block text-[0.66rem] font-semibold tracking-[var(--tracking-eyebrow)] uppercase text-[var(--color-sage-deep)] sm:text-[0.7rem]">
                 Lifestyle Estate
               </span>
-              <span className="display-title mt-1 block text-[1.8rem] leading-none font-semibold text-[var(--color-ink)] sm:text-[2.05rem]">
+              <span className="brand-wordmark mt-1 block text-[2.05rem] text-[var(--color-ink)] sm:text-[2.3rem]">
                 The Lombardy
               </span>
             </Link>

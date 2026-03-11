@@ -1,6 +1,15 @@
 # The Lombardy Lifestyle Estate
 
-Static Next.js App Router website for The Lombardy Lifestyle Estate, designed for Cloudflare Pages deployment.
+Static Next.js website for The Lombardy Lifestyle Estate, built for Cloudflare Pages and the live domain [thelombardy.co.za](https://thelombardy.co.za).
+
+## Overview
+
+The site is a brochure-plus-operations website for owners, residents, trustees, tenants, and prospective residents. It focuses on:
+
+- estate overview and living information
+- notices and governance communication
+- management and owner support
+- rules, forms, levy guidance, and owner portal access
 
 ## Stack
 
@@ -17,6 +26,12 @@ npm install
 npm run dev
 ```
 
+Default local URL:
+
+```bash
+http://localhost:3000
+```
+
 ## Verification
 
 ```bash
@@ -25,18 +40,54 @@ npm run typecheck
 npm run build
 ```
 
+## Project structure
+
+```text
+app/            Routes, metadata, manifest, icons, and global styles
+components/     Layout, section, and UI components
+content/        Estate data, amenities, trustees, nearby context, and MDX notices
+lib/            Content loading, formatting, metadata, structured data, navigation
+public/         Images and downloadable documents
+```
+
 ## Content model
 
 - Estate notices live in `content/news/*.mdx`
 - Core site settings live in `content/site.ts`
-- Trustees, amenities, and curated social feed entries live in `content/*.ts`
+- Trustees, amenities, nearby context, and estate gallery content live in `content/*.ts`
 - The March 2026 newsletter PDF is served from `public/documents/the-lombardy-news-letter-march-2026.pdf`
 
-## Cloudflare Pages
+## Deployment
+
+The project uses static export via `next.config.ts`:
+
+```ts
+output: "export"
+```
+
+That means deployment is a fully static upload with no runtime server dependency.
+
+### Cloudflare Pages
 
 - Framework preset: `Next.js`
 - Build command: `npm run build`
 - Output directory: `out`
 - Recommended Node version: `22`
 
-This project uses `output: "export"` in `next.config.ts`, so deployment is a fully static export with no runtime server dependency.
+Direct deploy command:
+
+```bash
+npx wrangler pages deploy out --project-name thelombardy-co-za --branch main
+```
+
+## Owner support paths
+
+- Owner portal: [app.weconnectu.co.za](https://app.weconnectu.co.za)
+- Primary support: `connect@landsdowne.co.za`
+- Escalation: `trustees@thelombardy.co.za`
+
+## Notes
+
+- The site is intentionally static and does not use API routes.
+- Estate imagery lives under `public/images/`.
+- App icons and favicon assets live in `app/`.

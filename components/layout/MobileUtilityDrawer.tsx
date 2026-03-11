@@ -112,7 +112,7 @@ export function MobileUtilityDrawer({
           <div className="flex items-center justify-between gap-4 rounded-[1.85rem] border border-white/10 bg-white/6 px-4 py-3 sm:px-5">
             <div>
               <p className="eyebrow text-on-dark-label">Lifestyle Estate</p>
-              <h2 className="display-title mt-1 text-[1.95rem] leading-none font-semibold text-on-dark">
+              <h2 className="brand-wordmark mt-1 text-[2.25rem] text-on-dark sm:text-[2.45rem]">
                 The Lombardy
               </h2>
             </div>
