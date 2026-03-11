@@ -26,11 +26,11 @@ export default async function HomePage() {
   return (
     <>
       <HeroEstate featuredNotice={featuredNotices[0]} />
-      <NoticeCardGrid notices={latestNotices} />
+      <NoticeCardGrid notices={latestNotices} variant="featured" tone="dark" />
       <LifestyleAmenities />
-      <NearbyAmenities compact />
       <GovernanceSnapshot />
       <ManagementPanel />
+      <NearbyAmenities compact />
       <InstagramStrip />
       <EstateMapCard />
     </>

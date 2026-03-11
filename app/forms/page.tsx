@@ -52,20 +52,49 @@ export default function FormsPage() {
         eyebrow="Forms"
         title="Estate forms for everyday administration."
         description="Move-ins, contractor access, resident updates, amenity bookings, and pet registration can be supported through a clear forms library."
+        highlights={[
+          "Move-ins",
+          "Contractor access",
+          "Pet registration",
+        ]}
       />
 
       <section className="section-space-end">
-        <div className="page-shell grid gap-5 md:grid-cols-2">
-          {formExamples.map((item) => (
-            <SoftCard key={item.title} tone="panel">
-              <h2 className="text-2xl font-medium text-[var(--color-ink)]">
-                {item.title}
-              </h2>
-              <p className="body-copy-sm mt-4 sm:text-base">
-                {item.body}
-              </p>
-            </SoftCard>
-          ))}
+        <div className="page-shell grid gap-5 xl:grid-cols-[0.84fr_1.16fr]">
+          <SoftCard tone="stone" padding="lg">
+            <p className="eyebrow">Forms library</p>
+            <h2 className="display-title display-section mt-4 font-semibold text-[var(--color-ink)]">
+              Standard forms support move-ins, access requests, resident updates, amenity bookings, and pet registration.
+            </h2>
+            <p className="body-copy-sm mt-5 sm:text-base">
+              A clear forms library helps management keep resident information current and shared processes consistent across the estate.
+            </p>
+          </SoftCard>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {formExamples.map((item, index) => (
+              <SoftCard key={item.title} tone={index === formExamples.length - 1 ? "dark" : "panel"}>
+                <h2
+                  className={`text-2xl font-medium ${
+                    index === formExamples.length - 1
+                      ? "text-on-dark"
+                      : "text-[var(--color-ink)]"
+                  }`}
+                >
+                  {item.title}
+                </h2>
+                <p
+                  className={`mt-4 text-sm leading-7 sm:text-base ${
+                    index === formExamples.length - 1
+                      ? "text-on-dark-muted"
+                      : "text-[var(--color-ink-soft)]"
+                  }`}
+                >
+                  {item.body}
+                </p>
+              </SoftCard>
+            ))}
+          </div>
         </div>
       </section>
     </>

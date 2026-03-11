@@ -6,8 +6,8 @@ export function EstateMapCard() {
   return (
     <section className="section-space">
       <div className="page-shell">
-        <div className="grid gap-5 lg:grid-cols-[0.92fr_1.08fr]">
-          <div className="soft-card surface-panel radius-panel px-6 py-7 sm:px-8 sm:py-8">
+        <div className="grid gap-5 lg:grid-cols-[0.86fr_1.14fr]">
+          <div className="soft-card surface-feature radius-feature px-6 py-7 sm:px-8 sm:py-8">
             <SectionHeading
               eyebrow="Location"
               title="The estate sits within Broadacres, Johannesburg."
@@ -30,13 +30,19 @@ export function EstateMapCard() {
                 Operational administration is handled by {siteConfig.managementCompany}.
               </p>
               <p>
-                <strong className="text-[var(--color-ink)]">Contact:</strong>{" "}
-                <a href={`mailto:${siteConfig.contactEmail}`} className="transition hover:text-[var(--color-ink)]">
-                  {siteConfig.contactEmail}
+                <strong className="text-[var(--color-ink)]">Owner support:</strong>{" "}
+                <a
+                  href={`mailto:${siteConfig.ownerSupportEmail}`}
+                  className="transition hover:text-[var(--color-ink)]"
+                >
+                  {siteConfig.ownerSupportEmail}
                 </a>{" "}
-                and{" "}
-                <a href={siteConfig.contactPhoneHref} className="transition hover:text-[var(--color-ink)]">
-                  {siteConfig.contactPhoneDisplay}
+                through Landsdowne. If Landsdowne is not responsive, escalate to{" "}
+                <a
+                  href={`mailto:${siteConfig.trusteeContactEmail}`}
+                  className="transition hover:text-[var(--color-ink)]"
+                >
+                  {siteConfig.trusteeContactEmail}
                 </a>
               </p>
             </div>
@@ -48,11 +54,11 @@ export function EstateMapCard() {
             </div>
           </div>
 
-          <div className="soft-card surface-card radius-card overflow-hidden p-3">
+          <div className="soft-card surface-dark radius-feature overflow-hidden p-3">
             <iframe
               title="Estate location"
               src={siteConfig.googleMapsEmbedUrl}
-              className="radius-inset min-h-[28rem] w-full border-0"
+              className="radius-panel min-h-[28rem] w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />

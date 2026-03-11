@@ -15,6 +15,7 @@ interface PageLeadProps {
   detailTitle?: string;
   detailBody?: string;
   actions?: Action[];
+  highlights?: string[];
 }
 
 export function PageLead({
@@ -25,6 +26,7 @@ export function PageLead({
   detailTitle,
   detailBody,
   actions = [],
+  highlights = [],
 }: PageLeadProps) {
   const hasDetailPanel = Boolean(detailTitle || detailBody);
 
@@ -37,26 +39,43 @@ export function PageLead({
             hasDetailPanel && "lg:grid-cols-[1.02fr_0.98fr]",
           )}
         >
-          <div className="soft-card surface-feature radius-feature px-6 py-7 sm:px-10 sm:py-10">
-            <p className="eyebrow">{eyebrow}</p>
-            <h1 className="display-title display-page balanced-text text-on-light mt-4 font-semibold">
-              {title}
-            </h1>
-            <p className="body-copy-lg text-on-light-muted mt-6 max-w-3xl">
-              {description}
-            </p>
-            {actions.length ? (
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                {actions.map((action) => (
-                  <ButtonLink
-                    key={action.href}
-                    href={action.href}
-                    variant={action.variant ?? "primary"}
-                  >
-                    {action.label}
-                  </ButtonLink>
-                ))}
+          <div className="soft-card surface-feature radius-feature overflow-hidden px-6 py-7 sm:px-10 sm:py-10">
+            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-start">
+              <div>
+                <p className="eyebrow">{eyebrow}</p>
+                <h1 className="display-title display-page balanced-text text-on-light mt-4 max-w-4xl font-semibold">
+                  {title}
+                </h1>
+                <p className="body-copy-lg text-on-light-muted mt-6 max-w-3xl">
+                  {description}
+                </p>
               </div>
+              {actions.length ? (
+                <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
+                  {actions.map((action) => (
+                    <ButtonLink
+                      key={action.href}
+                      href={action.href}
+                      variant={action.variant ?? "primary"}
+                    >
+                      {action.label}
+                    </ButtonLink>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+
+            {highlights.length ? (
+              <>
+                <div className="section-rule mt-8" />
+                <div className="mt-5 flex flex-wrap gap-2 text-[0.74rem] font-semibold tracking-[var(--tracking-ui)] uppercase text-[var(--color-ink-soft)]">
+                  {highlights.map((highlight) => (
+                    <span key={highlight} className="inset-surface radius-inset px-3 py-2">
+                      {highlight}
+                    </span>
+                  ))}
+                </div>
+              </>
             ) : null}
           </div>
 

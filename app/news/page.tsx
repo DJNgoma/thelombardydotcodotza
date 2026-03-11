@@ -57,6 +57,11 @@ export default async function NewsPage() {
           { href: "/governance", label: "Governance page" },
           { href: "/management", label: "Management overview", variant: "secondary" },
         ]}
+        highlights={[
+          "Maintenance updates",
+          "Meeting notices",
+          "Levy communication",
+        ]}
       />
 
       <section className="section-space-end-tight">

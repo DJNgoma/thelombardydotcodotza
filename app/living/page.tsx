@@ -51,6 +51,9 @@ const livingTopics = [
 ];
 
 export default function LivingPage() {
+  const featuredLivingTopics = livingTopics.slice(0, 2);
+  const operationalLivingTopics = livingTopics.slice(2);
+
   return (
     <>
       <StructuredData
@@ -72,23 +75,50 @@ export default function LivingPage() {
           { href: "/news", label: "Latest notices" },
           { href: "/management", label: "Management overview", variant: "secondary" },
         ]}
+        highlights={[
+          "Clubhouse bookings",
+          "Visitor access",
+          "Pet registration",
+        ]}
       />
 
       <LifestyleAmenities />
       <NearbyAmenities />
 
       <section className="section-space-end">
-        <div className="page-shell grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {livingTopics.map((topic) => (
-            <SoftCard key={topic.title}>
-              <h2 className="text-2xl font-medium text-[var(--color-ink)]">
-                {topic.title}
-              </h2>
-              <p className="body-copy-sm mt-4 sm:text-base">
-                {topic.body}
-              </p>
-            </SoftCard>
-          ))}
+        <div className="page-shell grid gap-5 xl:grid-cols-[0.8fr_1.2fr]">
+          <SoftCard tone="dark" padding="lg">
+            <p className="eyebrow text-on-dark-label">Practical estate living</p>
+            <h2 className="display-title display-section mt-4 font-semibold text-on-dark">
+              Residential living stays comfortable when shared spaces and access processes are used properly.
+            </h2>
+            <div className="mt-8 grid gap-3">
+              {featuredLivingTopics.map((topic) => (
+                <div key={topic.title} className="band-support-card radius-panel px-5 py-5">
+                  <p className="meta-label text-on-dark-label">{topic.title}</p>
+                  <p className="mt-3 text-sm leading-7 text-on-dark-muted sm:text-base">
+                    {topic.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </SoftCard>
+
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {operationalLivingTopics.map((topic, index) => (
+              <SoftCard
+                key={topic.title}
+                tone={index === operationalLivingTopics.length - 1 ? "stone" : "card"}
+              >
+                <h2 className="text-2xl font-medium text-[var(--color-ink)]">
+                  {topic.title}
+                </h2>
+                <p className="body-copy-sm mt-4 sm:text-base">
+                  {topic.body}
+                </p>
+              </SoftCard>
+            ))}
+          </div>
         </div>
       </section>
     </>

@@ -55,20 +55,37 @@ export default function ManagementPage() {
           { href: siteConfig.ownerPortalUrl, label: "Owner portal" },
           { href: "/levy-resources", label: "Levy information", variant: "secondary" },
         ]}
+        highlights={[
+          "Landsdowne support",
+          "Owner portal access",
+          "Trustee escalation",
+        ]}
       />
 
       <section className="section-space-end-tight">
-        <div className="page-shell grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {managementFunctions.map((item) => (
-            <SoftCard key={item.title}>
-              <h2 className="text-2xl font-medium text-[var(--color-ink)]">
-                {item.title}
-              </h2>
-              <p className="body-copy-sm mt-4 sm:text-base">
-                {item.body}
-              </p>
-            </SoftCard>
-          ))}
+        <div className="page-shell grid gap-5 xl:grid-cols-[0.82fr_1.18fr]">
+          <SoftCard tone="dark" padding="lg">
+            <p className="eyebrow text-on-dark-label">Support pathway</p>
+            <h2 className="display-title display-section mt-4 font-semibold text-on-dark">
+              Landsdowne remains the first point of contact for owner access, operational queries, and finance support.
+            </h2>
+            <p className="mt-5 text-sm leading-7 text-on-dark-muted sm:text-base">
+              Owners should use Landsdowne for ordinary support and portal access. Trustees remain an escalation path if Landsdowne is not responsive.
+            </p>
+          </SoftCard>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {managementFunctions.map((item, index) => (
+              <SoftCard key={item.title} tone={index === 0 ? "stone" : "card"}>
+                <h2 className="text-2xl font-medium text-[var(--color-ink)]">
+                  {item.title}
+                </h2>
+                <p className="body-copy-sm mt-4 sm:text-base">
+                  {item.body}
+                </p>
+              </SoftCard>
+            ))}
+          </div>
         </div>
       </section>
 

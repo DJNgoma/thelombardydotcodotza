@@ -10,7 +10,7 @@ import { breadcrumbSchema } from "@/lib/structured-data";
 export const metadata: Metadata = buildPageMetadata({
   title: "Owner Portal",
   description:
-    "Owner portal access, account support, and WeConnectU guidance for The Lombardy Lifestyle Estate.",
+    "Owner portal access, account records, and WeConnectU guidance for The Lombardy Lifestyle Estate.",
   path: "/portal",
 });
 
@@ -44,51 +44,60 @@ export default function PortalPage() {
       <PageLead
         eyebrow="Owner Portal"
         title="Owners can access account information and estate records through WeConnectU."
-        description="The owner portal is the primary access point for account records, support history, and other owner-facing estate information."
+        description="The owner portal is the primary access point for account records, levy information, and other owner-facing estate information."
         actions={[
           { href: siteConfig.ownerPortalUrl, label: "Open owner portal" },
           {
             href: `mailto:${siteConfig.ownerSupportEmail}`,
-            label: "Email support",
+            label: "Email Landsdowne",
             variant: "secondary",
           },
+        ]}
+        highlights={[
+          "WeConnectU access",
+          "Account records",
+          "Owner documents",
         ]}
       />
 
       <section className="section-space-end">
-        <div className="page-shell grid gap-5 md:grid-cols-3">
-          {portalModules.map((module) => (
-            <SoftCard key={module.title} tone="panel">
-              <h2 className="text-2xl font-medium text-[var(--color-ink)]">
-                {module.title}
-              </h2>
-              <p className="body-copy-sm mt-4 sm:text-base">
-                {module.body}
-              </p>
-            </SoftCard>
-          ))}
-        </div>
-        <div className="page-shell mt-5">
-          <SoftCard tone="feature" padding="lg">
-            <p className="eyebrow">Access support</p>
-            <p className="body-copy-sm mt-4 max-w-3xl sm:text-base">
-              If you cannot access the owner portal, contact{" "}
+        <div className="page-shell grid gap-5 xl:grid-cols-[0.84fr_1.16fr]">
+          <SoftCard tone="dark" padding="lg">
+            <p className="eyebrow text-on-dark-label">Access support</p>
+            <h2 className="display-title display-section mt-4 font-semibold text-on-dark">
+              WeConnectU is the primary owner access point for records, documents, and account information.
+            </h2>
+            <p className="mt-5 text-sm leading-7 text-on-dark-muted sm:text-base">
+              If you cannot access the owner portal, contact Landsdowne at{" "}
               <a
                 href={`mailto:${siteConfig.ownerSupportEmail}`}
-                className="transition hover:text-[var(--color-ink)]"
+                className="text-on-dark transition hover:text-white"
               >
                 {siteConfig.ownerSupportEmail}
-              </a>{" "}
-              or{" "}
+              </a>
+              . If Landsdowne is not responsive, escalate to{" "}
               <a
                 href={`mailto:${siteConfig.trusteeContactEmail}`}
-                className="transition hover:text-[var(--color-ink)]"
+                className="text-on-dark transition hover:text-white"
               >
                 {siteConfig.trusteeContactEmail}
               </a>
               .
             </p>
           </SoftCard>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {portalModules.map((module, index) => (
+              <SoftCard key={module.title} tone={index === 0 ? "stone" : "panel"}>
+                <h2 className="text-2xl font-medium text-[var(--color-ink)]">
+                  {module.title}
+                </h2>
+                <p className="body-copy-sm mt-4 sm:text-base">
+                  {module.body}
+                </p>
+              </SoftCard>
+            ))}
+          </div>
         </div>
       </section>
     </>

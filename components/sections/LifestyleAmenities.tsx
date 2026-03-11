@@ -6,51 +6,115 @@ export function LifestyleAmenities() {
   return (
     <section className="section-space">
       <div className="page-shell">
-        <SectionHeading
-          eyebrow="Living at The Lombardy"
-          title="Shared amenities that support everyday residential living."
-          description="The estate’s amenities are designed for regular residential use and managed through clear standards, access controls, and booking processes."
-        />
+        <div className="grid gap-5 xl:grid-cols-[0.86fr_1.14fr]">
+          <div className="soft-card surface-stone radius-feature px-6 py-7 sm:px-10 sm:py-10">
+            <SectionHeading
+              eyebrow="Living at The Lombardy"
+              title="Shared amenities designed for everyday estate living."
+              description="Amenities are part of the estate’s daily residential offer, supported by practical access procedures, managed bookings, and standards that keep shared spaces orderly."
+              maxWidth="wide"
+            />
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-[1.02fr_0.98fr]">
-          <article className="soft-card surface-card radius-card overflow-hidden p-3">
-            <div className="flex h-full flex-col">
-              <div className="radius-card relative min-h-[24rem] overflow-hidden bg-white">
+            <div className="mt-8 band-stack">
+              <div className="soft-card surface-panel radius-panel px-5 py-5 sm:px-6">
+                <p className="meta-label text-[var(--color-sage-deep)]">
+                  Pool and clubhouse
+                </p>
+                <p className="body-copy-sm mt-4 sm:text-base">
+                  The pool and clubhouse remain part of the estate’s everyday residential offering, supported by controlled access and managed booking processes.
+                </p>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div className="inset-surface radius-inset px-4 py-4">
+                  <p className="meta-label text-[var(--color-sage-deep)]">
+                    Controlled access
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-[var(--color-ink-soft)]">
+                    Shared spaces remain resident-focused and access is managed through estate controls.
+                  </p>
+                </div>
+                <div className="inset-surface radius-inset px-4 py-4">
+                  <p className="meta-label text-[var(--color-sage-deep)]">
+                    Managed bookings
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-[var(--color-ink-soft)]">
+                    Clubhouse use is supported through practical booking steps and resident accountability.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <article className="soft-card surface-card radius-feature overflow-hidden p-3">
+            <div className="grid gap-3 lg:grid-cols-[1.2fr_0.8fr]">
+              <div className="radius-panel relative min-h-[23rem] overflow-hidden lg:min-h-[31rem]">
                 <Image
                   src="/images/estate/pool-from-newsletter.png"
                   alt="Estate pool image sourced from the March 2026 newsletter."
                   fill
                   className="object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(20,27,23,0.2)] via-transparent to-transparent" />
               </div>
-              <div className="inset-surface radius-inset mt-3 p-5 sm:p-6">
-                <p className="meta-label text-[var(--color-sage-deep)]">
-                  Pool and clubhouse
-                </p>
-                <p className="body-copy-sm text-on-light-muted mt-3 sm:text-base">
-                  The pool and clubhouse remain part of the estate’s everyday
-                  residential offering, supported by controlled access and
-                  managed booking processes.
-                </p>
+
+              <div className="grid gap-3">
+                {amenities.slice(0, 2).map((amenity) => (
+                  <article
+                    key={amenity.title}
+                    className="surface-panel radius-card flex flex-col justify-between border border-[var(--color-line)] p-5"
+                  >
+                    <div>
+                      <p className="meta-label text-[var(--color-sage-deep)]">
+                        {amenity.title}
+                      </p>
+                      <p className="body-copy-sm mt-4">
+                        {amenity.summary}
+                      </p>
+                    </div>
+                    <p className="mt-5 text-sm leading-7 text-[var(--color-ink)]">
+                      {amenity.highlight}
+                    </p>
+                  </article>
+                ))}
               </div>
             </div>
           </article>
+        </div>
 
-          <div className="grid gap-5 sm:grid-cols-2">
-            {amenities.map((amenity) => (
-              <article key={amenity.title} className="soft-card surface-card radius-card p-5 sm:p-7">
-                <h3 className="text-3xl font-medium text-[var(--color-ink)]">
-                  {amenity.title}
-                </h3>
-                <p className="body-copy-sm mt-4 sm:text-base">
-                  {amenity.summary}
-                </p>
-                <p className="inset-surface radius-inset mt-6 px-4 py-4 text-sm leading-7 text-[var(--color-ink)]">
-                  {amenity.highlight}
-                </p>
-              </article>
-            ))}
-          </div>
+        <div className="mt-5 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {amenities.slice(2).map((amenity, index) => (
+            <article
+              key={amenity.title}
+              className={`soft-card ${
+                index === 0 ? "surface-dark" : "surface-card"
+              } radius-card p-5 sm:p-7`}
+            >
+              <p
+                className={`meta-label ${
+                  index === 0
+                    ? "text-on-dark-label"
+                    : "text-[var(--color-sage-deep)]"
+                }`}
+              >
+                {amenity.title}
+              </p>
+              <p
+                className={`mt-4 text-base leading-7 ${
+                  index === 0 ? "text-on-dark-muted" : "text-[var(--color-ink-soft)]"
+                }`}
+              >
+                {amenity.summary}
+              </p>
+              <p
+                className={`mt-6 text-sm leading-7 ${
+                  index === 0 ? "text-on-dark" : "text-[var(--color-ink)]"
+                }`}
+              >
+                {amenity.highlight}
+              </p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

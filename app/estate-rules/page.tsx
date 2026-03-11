@@ -52,20 +52,37 @@ export default function EstateRulesPage() {
         eyebrow="Estate Rules"
         title="Community standards that protect residential quality."
         description="This page summarises the estate’s standards for access, shared amenities, conduct, tenant compliance, and pet registration."
+        highlights={[
+          "Access rules",
+          "Shared amenities",
+          "Tenant compliance",
+        ]}
       />
 
       <section className="section-space-end">
-        <div className="page-shell grid gap-5 md:grid-cols-2">
-          {ruleThemes.map((theme) => (
-            <SoftCard key={theme.title}>
-              <h2 className="text-2xl font-medium text-[var(--color-ink)]">
-                {theme.title}
-              </h2>
-              <p className="body-copy-sm mt-4 sm:text-base">
-                {theme.body}
-              </p>
-            </SoftCard>
-          ))}
+        <div className="page-shell grid gap-5 xl:grid-cols-[0.84fr_1.16fr]">
+          <SoftCard tone="dark" padding="lg">
+            <p className="eyebrow text-on-dark-label">Estate standards</p>
+            <h2 className="display-title display-section mt-4 font-semibold text-on-dark">
+              Shared rules protect the estate’s calm residential character and day-to-day order.
+            </h2>
+            <p className="mt-5 text-sm leading-7 text-on-dark-muted sm:text-base">
+              Estate rules cover movement, amenities, conduct, tenant responsibility, and pet registration so shared spaces remain respectful and well managed.
+            </p>
+          </SoftCard>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {ruleThemes.map((theme, index) => (
+              <SoftCard key={theme.title} tone={index === ruleThemes.length - 1 ? "stone" : "card"}>
+                <h2 className="text-2xl font-medium text-[var(--color-ink)]">
+                  {theme.title}
+                </h2>
+                <p className="body-copy-sm mt-4 sm:text-base">
+                  {theme.body}
+                </p>
+              </SoftCard>
+            ))}
+          </div>
         </div>
       </section>
     </>

@@ -13,8 +13,6 @@ export function organizationSchema() {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
-    email: siteConfig.contactEmail,
-    telephone: siteConfig.contactPhoneDisplay,
     sameAs: [siteConfig.instagramUrl],
     description: siteConfig.description,
   };

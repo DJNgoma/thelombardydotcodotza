@@ -26,46 +26,105 @@ export function NearbyAmenities({ compact = false }: NearbyAmenitiesProps) {
   return (
     <section className="section-space">
       <div className="page-shell">
-        <SectionHeading
-          eyebrow="Around The Lombardy"
-          title={
+        <div
+          className={
             compact
-              ? "Broadacres and Fourways provide practical everyday convenience."
-              : "Nearby schools, shopping, healthcare, and travel links support estate living."
+              ? "soft-card surface-dark radius-feature px-6 py-7 sm:px-10 sm:py-10"
+              : undefined
           }
-          description={
-            compact
-              ? "The estate sits within a well-established northern Johannesburg catchment with shopping, schools, healthcare, and travel links close at hand."
-              : "The surrounding Broadacres and Fourways area offers established retail, education, healthcare, leisure, and travel connections for owners and residents."
-          }
-          maxWidth="wide"
-        />
+        >
+          <SectionHeading
+            eyebrow="Around The Lombardy"
+            title={
+              compact
+                ? "Broadacres and Fourways provide practical everyday convenience."
+                : "Nearby schools, shopping, healthcare, and travel links support estate living."
+            }
+            description={
+              compact
+                ? "The estate sits within a well-established northern Johannesburg catchment with shopping, schools, healthcare, and travel links close at hand."
+                : "The surrounding Broadacres and Fourways area offers established retail, education, healthcare, leisure, and travel connections for owners and residents."
+            }
+            maxWidth="wide"
+            tone={compact ? "dark" : "light"}
+          />
 
-        <div className={`mt-10 grid gap-5 ${compact ? "lg:grid-cols-3" : "lg:grid-cols-2 xl:grid-cols-3"}`}>
-          {groups.map((group) => (
-            <article
-              key={group.category}
-              className="soft-card surface-card radius-card p-5 sm:p-7"
+          <div
+            className={`mt-10 grid gap-5 ${
+              compact ? "xl:grid-cols-[0.86fr_1.14fr]" : "lg:grid-cols-[0.8fr_1.2fr]"
+            }`}
+          >
+            {compact ? (
+              <article className="band-support-card radius-panel px-6 py-6 sm:px-7">
+                <p className="meta-label text-on-dark-label">
+                  Everyday catchment
+                </p>
+                <p className="mt-4 text-xl leading-8 text-on-dark">
+                  The estate is positioned within an established northern
+                  Johannesburg catchment that supports everyday residential
+                  living.
+                </p>
+                <p className="mt-5 text-sm leading-7 text-on-dark-muted sm:text-base">
+                  Nearby schools, shopping, healthcare, and leisure anchors add
+                  practical convenience without changing the estate’s calm,
+                  residential character.
+                </p>
+              </article>
+            ) : null}
+
+            <div
+              className={`grid gap-5 ${
+                compact ? "md:grid-cols-3" : "md:grid-cols-2 xl:grid-cols-3"
+              }`}
             >
-              <p className="eyebrow">{group.category}</p>
-              <div className="mt-5 space-y-5">
-                {group.items.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="block"
+              {groups.map((group) => (
+                <article
+                  key={group.category}
+                  className={
+                    compact
+                      ? "band-support-card radius-card p-5 sm:p-7"
+                      : "soft-card surface-card radius-card p-5 sm:p-7"
+                  }
+                >
+                  <p
+                    className={`eyebrow ${
+                      compact ? "text-on-dark-label" : "text-[var(--color-sage-deep)]"
+                    }`}
                   >
-                    <h3 className="text-xl font-medium text-[var(--color-ink)] transition hover:text-[var(--color-sage-deep)]">
-                      {item.name}
-                    </h3>
-                    <p className="body-copy-sm mt-2">{item.summary}</p>
-                  </a>
-                ))}
-              </div>
-            </article>
-          ))}
+                    {group.category}
+                  </p>
+                  <div className="mt-5 space-y-5">
+                    {group.items.map((item) => (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="block"
+                      >
+                        <h3
+                          className={`text-xl font-medium transition ${
+                            compact
+                              ? "text-on-dark hover:text-white"
+                              : "text-[var(--color-ink)] hover:text-[var(--color-sage-deep)]"
+                          }`}
+                        >
+                          {item.name}
+                        </h3>
+                        <p
+                          className={`mt-2 text-sm leading-7 ${
+                            compact ? "text-on-dark-muted" : "text-[var(--color-ink-soft)]"
+                          }`}
+                        >
+                          {item.summary}
+                        </p>
+                      </a>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

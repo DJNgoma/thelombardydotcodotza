@@ -16,9 +16,6 @@ export const siteConfig: SiteConfig = {
   managementCompany: "Landsdowne Property Group",
   managementSummary:
     "Landsdowne Property Group oversees operational management, maintenance coordination, resident support, and financial administration for the estate.",
-  contactEmail: "living@lombardyluxury.co.za",
-  contactPhoneDisplay: "+27 (0) 74 280 0000",
-  contactPhoneHref: "tel:+27742800000",
   instagramUrl: "https://www.instagram.com/theluxurylombardy/",
   ownerPortalUrl: "https://app.weconnectu.co.za",
   ownerSupportEmail: "connect@landsdowne.co.za",
@@ -27,28 +24,28 @@ export const siteConfig: SiteConfig = {
     "https://chat.whatsapp.com/Jno37QOdorDELEFCzufmrc?mode=hqctcli",
   managementContacts: [
     {
-      title: "Estate enquiries",
+      title: "Landsdowne support",
       summary:
-        "General estate enquiries may be directed to the estate phone number and email listed here.",
-      actionLabel: "Email enquiries",
-      actionHref: "mailto:living@lombardyluxury.co.za",
-      secondaryLabel: "Call enquiries",
-      secondaryHref: "tel:+27742800000",
+        "Landsdowne Property Group handles day-to-day owner support, portal access help, and operational queries.",
+      actionLabel: "Email Landsdowne",
+      actionHref: "mailto:connect@landsdowne.co.za",
+      secondaryLabel: "Open owner portal",
+      secondaryHref: "https://app.weconnectu.co.za",
     },
     {
       title: "Owner portal support",
       summary:
-        "Owners can sign in through WeConnectU. If access assistance is needed, Landsdowne and the trustees can assist by email.",
+        "Owners can sign in through WeConnectU for account records, levy information, and estate-issued documents.",
       actionLabel: "Open owner portal",
       actionHref: "https://app.weconnectu.co.za",
-      secondaryLabel: "Email support",
+      secondaryLabel: "Email Landsdowne",
       secondaryHref: "mailto:connect@landsdowne.co.za",
     },
     {
-      title: "Trustee contact",
+      title: "Trustee escalation",
       summary:
-        "Trustee correspondence can be directed to the estate trustee mailbox where owner support or governance follow-up is required.",
-      actionLabel: "Email trustees",
+        "If Landsdowne is not responsive, owners may escalate support or governance concerns to the trustees.",
+      actionLabel: "Escalate to trustees",
       actionHref: "mailto:trustees@thelombardy.co.za",
     },
   ],

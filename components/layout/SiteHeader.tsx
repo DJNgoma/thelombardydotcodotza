@@ -30,13 +30,13 @@ export function SiteHeader() {
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-30">
-        <div className="page-shell pt-2.5 sm:pt-4">
-          <div className="soft-card surface-panel radius-feature flex items-center justify-between gap-4 px-4 py-3 sm:px-6 sm:py-4">
+        <div className="page-shell pt-2 sm:pt-3">
+          <div className="soft-card surface-feature radius-feature flex items-center justify-between gap-4 px-4 py-3 sm:px-5 sm:py-3.5">
             <Link href="/" className="min-w-0 shrink-0">
-              <span className="block text-[0.68rem] font-semibold tracking-[var(--tracking-eyebrow)] uppercase text-[var(--color-sage-deep)] sm:text-[0.72rem]">
+              <span className="block text-[0.66rem] font-semibold tracking-[var(--tracking-eyebrow)] uppercase text-[var(--color-sage-deep)] sm:text-[0.7rem]">
                 Lifestyle Estate
               </span>
-              <span className="display-title mt-1 block text-[1.9rem] leading-none font-semibold text-[var(--color-ink)] sm:text-[2.2rem]">
+              <span className="display-title mt-1 block text-[1.8rem] leading-none font-semibold text-[var(--color-ink)] sm:text-[2.05rem]">
                 The Lombardy
               </span>
             </Link>
@@ -53,7 +53,7 @@ export function SiteHeader() {
                     key={item.href}
                     href={item.href}
                     className={clsx(
-                      "rounded-full px-3 py-2 text-[13px] font-medium whitespace-nowrap transition xl:px-4",
+                      "rounded-full px-3 py-2 text-[12px] font-medium whitespace-nowrap transition xl:px-4",
                       active
                         ? "accent-surface text-on-dark"
                         : "text-[var(--color-ink-soft)] hover:bg-white/70 hover:text-[var(--color-ink)]",
@@ -70,7 +70,7 @@ export function SiteHeader() {
                 href={siteConfig.ownerPortalUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="hidden min-h-11 items-center rounded-full accent-surface px-4 text-sm font-semibold uppercase tracking-[var(--tracking-ui)] text-on-dark transition hover:bg-[#3e4b3f] lg:inline-flex"
+                className="hidden min-h-11 items-center rounded-full accent-surface px-4 text-[0.78rem] font-semibold uppercase tracking-[var(--tracking-ui)] text-on-dark transition hover:bg-[#3e4b3f] lg:inline-flex"
               >
                 Owner Portal
               </a>

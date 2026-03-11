@@ -9,23 +9,50 @@ export function GovernanceSnapshot() {
   return (
     <section className="section-space">
       <div className="page-shell">
-        <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="soft-card surface-panel radius-panel px-6 py-7 sm:px-8 sm:py-8">
+        <div className="grid gap-5 xl:grid-cols-[0.86fr_1.14fr]">
+          <div className="soft-card surface-dark radius-feature px-6 py-7 sm:px-8 sm:py-9">
             <SectionHeading
               eyebrow="Governance"
               title="Governance with visible accountability."
               description="The trustees oversee estate standards, financial stewardship, policy direction, and owner communication within the body corporate framework."
+              tone="dark"
             />
             <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href="/governance">Governance overview</ButtonLink>
+              <ButtonLink href="/governance" variant="secondary">
+                Governance overview
+              </ButtonLink>
               <ButtonLink href="/estate-rules" variant="secondary">
                 Estate rules
               </ButtonLink>
             </div>
+            <div className="mt-8 band-stack">
+              <div className="band-support-card radius-panel px-5 py-5">
+                <p className="meta-label text-on-dark-label">
+                  Trustee role
+                </p>
+                <p className="mt-3 text-sm leading-7 text-on-dark-muted sm:text-base">
+                  Trustees guide standards, policy decisions, major maintenance priorities, and owner communication across the scheme.
+                </p>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div className="band-support-card radius-inset px-4 py-4">
+                  <p className="meta-label text-on-dark-label">CSOS context</p>
+                  <p className="mt-2 text-sm leading-6 text-on-dark-muted">
+                    Governance remains part of the wider community schemes framework and dispute-resolution structure.
+                  </p>
+                </div>
+                <div className="band-support-card radius-inset px-4 py-4">
+                  <p className="meta-label text-on-dark-label">Owner communication</p>
+                  <p className="mt-2 text-sm leading-6 text-on-dark-muted">
+                    Meeting notices, levy updates, and trustee communication remain structured and owner-facing.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="grid gap-5">
-            <div className="soft-card surface-card radius-card px-6 py-7 sm:px-8 sm:py-8">
+            <div className="soft-card surface-stone radius-feature px-6 py-7 sm:px-8 sm:py-8">
               <div className="flex items-center justify-between gap-4">
                 <Pill>Board of Trustees</Pill>
                 <span className="meta-label text-[var(--color-ink-soft)]">
@@ -49,15 +76,23 @@ export function GovernanceSnapshot() {
               </div>
             </div>
 
-            <div className="soft-card surface-card radius-card px-6 py-7 sm:px-8 sm:py-8">
-              <Pill>Finance overview</Pill>
-              <p className="mt-5 text-xl leading-8 text-[var(--color-ink)]">
-                Levies are the main source of funding that keeps the estate operating effectively.
-              </p>
-              <div className="mt-6">
+            <div className="grid gap-5 md:grid-cols-3">
+              <div className="soft-card surface-card radius-card px-6 py-7">
+                <Pill>Finance overview</Pill>
+                <p className="mt-5 text-base leading-7 text-[var(--color-ink-soft)]">
+                  Levies are the main source of funding that keeps the estate operating effectively.
+                </p>
+              </div>
+              <div className="soft-card surface-card radius-card px-6 py-7">
                 <InfoList
                   items={[
                     "Levy income supports maintenance, service providers, and essential estate obligations.",
+                  ]}
+                />
+              </div>
+              <div className="soft-card surface-card radius-card px-6 py-7">
+                <InfoList
+                  items={[
                     "Owners in arrears are encouraged to communicate proactively with the debtors department.",
                     "Acknowledgement of Debt arrangements can be used where full settlement is not immediately possible.",
                   ]}

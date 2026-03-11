@@ -4,7 +4,7 @@ import clsx from "clsx";
 interface SoftCardProps {
   children: ReactNode;
   className?: string;
-  tone?: "feature" | "panel" | "card";
+  tone?: "feature" | "panel" | "card" | "stone" | "dark";
   padding?: "md" | "lg";
 }
 
@@ -12,6 +12,8 @@ const toneClasses = {
   card: "surface-card radius-card",
   panel: "surface-panel radius-panel",
   feature: "surface-feature radius-feature",
+  stone: "surface-stone radius-feature",
+  dark: "surface-dark radius-feature",
 };
 
 const paddingClasses = {

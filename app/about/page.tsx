@@ -38,6 +38,9 @@ const principles = [
 ];
 
 export default function AboutPage() {
+  const [overview, secureCommunity, lifestylePositioning, communityStandards, managedEnvironment] =
+    principles;
+
   return (
     <>
       <StructuredData
@@ -57,32 +60,77 @@ export default function AboutPage() {
           { href: "/living", label: "Living at The Lombardy" },
           { href: "/governance", label: "View governance", variant: "secondary" },
         ]}
+        highlights={[
+          "Secure access",
+          "Shared amenities",
+          "Managed by Landsdowne",
+        ]}
       />
 
       <section className="section-space-end">
-        <div className="page-shell grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <SoftCard className="overflow-hidden p-3" tone="panel" padding="md">
-            <div className="radius-panel relative min-h-[28rem] overflow-hidden">
-              <Image
-                src="/images/estate/estate-courtyard-clean.jpg"
-                alt="Residential courtyard and building frontage at The Lombardy Lifestyle Estate."
-                fill
-                className="object-cover"
-              />
+        <div className="page-shell grid gap-6 xl:grid-cols-[1.06fr_0.94fr]">
+          <SoftCard className="overflow-hidden p-3" tone="stone" padding="md">
+            <div className="grid gap-3 lg:grid-cols-[1.04fr_0.96fr]">
+              <div className="radius-panel relative min-h-[27rem] overflow-hidden lg:min-h-[33rem]">
+                <Image
+                  src="/images/estate/estate-courtyard-clean.jpg"
+                  alt="Residential courtyard and building frontage at The Lombardy Lifestyle Estate."
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="grid gap-3">
+                <div className="surface-panel radius-card border border-[var(--color-line)] p-5 sm:p-6">
+                  <p className="meta-label text-[var(--color-sage-deep)]">
+                    {overview.title}
+                  </p>
+                  <p className="body-copy-sm mt-4 sm:text-base">
+                    {overview.body}
+                  </p>
+                </div>
+                <div className="surface-panel radius-card border border-[var(--color-line)] p-5 sm:p-6">
+                  <p className="meta-label text-[var(--color-sage-deep)]">
+                    {secureCommunity.title}
+                  </p>
+                  <p className="body-copy-sm mt-4 sm:text-base">
+                    {secureCommunity.body}
+                  </p>
+                </div>
+              </div>
             </div>
           </SoftCard>
 
           <div className="grid gap-5">
-            {principles.map((item) => (
-              <SoftCard key={item.title}>
+            <SoftCard tone="dark" padding="lg">
+              <p className="eyebrow text-on-dark-label">
+                {lifestylePositioning.title}
+              </p>
+              <h2 className="display-title display-section mt-4 font-semibold text-on-dark">
+                Residential calm, shared amenities, and a managed sense of order.
+              </h2>
+              <p className="mt-5 text-sm leading-7 text-on-dark-muted sm:text-base">
+                {lifestylePositioning.body}
+              </p>
+            </SoftCard>
+
+            <div className="grid gap-5 md:grid-cols-2">
+              <SoftCard key={communityStandards.title} tone="panel">
                 <h2 className="text-2xl font-medium text-[var(--color-ink)]">
-                  {item.title}
+                  {communityStandards.title}
                 </h2>
                 <p className="body-copy-sm mt-4 sm:text-base">
-                  {item.body}
+                  {communityStandards.body}
                 </p>
               </SoftCard>
-            ))}
+              <SoftCard key={managedEnvironment.title} tone="card">
+                <h2 className="text-2xl font-medium text-[var(--color-ink)]">
+                  {managedEnvironment.title}
+                </h2>
+                <p className="body-copy-sm mt-4 sm:text-base">
+                  {managedEnvironment.body}
+                </p>
+              </SoftCard>
+            </div>
           </div>
         </div>
       </section>

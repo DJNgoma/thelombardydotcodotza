@@ -40,46 +40,56 @@ export default function LevyResourcesPage() {
         actions={[
           {
             href: `mailto:${siteConfig.ownerSupportEmail}`,
-            label: "Email support",
+            label: "Email Landsdowne",
           },
           {
             href: `mailto:${siteConfig.trusteeContactEmail}`,
-            label: "Contact trustees",
+            label: "Trustee escalation",
             variant: "secondary",
           },
+        ]}
+        highlights={[
+          "Levy guidance",
+          "Arrears communication",
+          "AOD support",
         ]}
       />
 
       <section className="section-space-end">
-        <div className="page-shell grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {levyResources.map((item) => (
-            <SoftCard key={item}>
-              <p className="body-copy-sm sm:text-base">
-                {item}
-              </p>
-            </SoftCard>
-          ))}
-        </div>
-        <div className="page-shell mt-5">
-          <SoftCard tone="panel">
-            <p className="body-copy-sm max-w-3xl sm:text-base">
-              Owners who need assistance can contact{" "}
+        <div className="page-shell grid gap-5 xl:grid-cols-[0.82fr_1.18fr]">
+          <SoftCard tone="dark" padding="lg">
+            <p className="eyebrow text-on-dark-label">Owner finance support</p>
+            <h2 className="display-title display-section mt-4 font-semibold text-on-dark">
+              Levy communication is strongest when owners engage early and keep support channels open.
+            </h2>
+            <p className="mt-5 text-sm leading-7 text-on-dark-muted sm:text-base">
+              Owners who need assistance should contact Landsdowne at{" "}
               <a
                 href={`mailto:${siteConfig.ownerSupportEmail}`}
-                className="transition hover:text-[var(--color-ink)]"
+                className="text-on-dark transition hover:text-white"
               >
                 {siteConfig.ownerSupportEmail}
-              </a>{" "}
-              or{" "}
+              </a>
+              . If Landsdowne is not responsive, escalations may be sent to{" "}
               <a
                 href={`mailto:${siteConfig.trusteeContactEmail}`}
-                className="transition hover:text-[var(--color-ink)]"
+                className="text-on-dark transition hover:text-white"
               >
                 {siteConfig.trusteeContactEmail}
               </a>
               .
             </p>
           </SoftCard>
+
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {levyResources.map((item, index) => (
+              <SoftCard key={item} tone={index === 0 ? "stone" : "card"}>
+                <p className="body-copy-sm sm:text-base">
+                  {item}
+                </p>
+              </SoftCard>
+            ))}
+          </div>
         </div>
       </section>
     </>

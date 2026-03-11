@@ -53,32 +53,29 @@ export default function NoticesLoginPage() {
             variant: "secondary",
           },
         ]}
+        highlights={[
+          "Owner circulars",
+          "Governance packs",
+          "Secure archive access",
+        ]}
       />
 
       <section className="section-space-end">
-        <div className="page-shell grid gap-5 md:grid-cols-3">
-          {noticeAccessItems.map((item) => (
-            <SoftCard key={item.title} tone="panel">
-              <h2 className="text-2xl font-medium text-[var(--color-ink)]">
-                {item.title}
-              </h2>
-              <p className="body-copy-sm mt-4 sm:text-base">
-                {item.body}
-              </p>
-            </SoftCard>
-          ))}
-        </div>
-        <div className="page-shell mt-5">
-          <SoftCard tone="feature" padding="lg">
-            <p className="body-copy-sm max-w-3xl sm:text-base">
-              If you cannot reach the owner portal, contact{" "}
+        <div className="page-shell grid gap-5 xl:grid-cols-[0.82fr_1.18fr]">
+          <SoftCard tone="stone" padding="lg">
+            <p className="eyebrow">Secure owner access</p>
+            <h2 className="display-title display-section mt-4 font-semibold text-[var(--color-ink)]">
+              Owner circulars and controlled governance material are handled through secure access rather than the public notice archive.
+            </h2>
+            <p className="body-copy-sm mt-5 sm:text-base">
+              If you cannot reach the owner portal, contact Landsdowne at{" "}
               <a
                 href={`mailto:${siteConfig.ownerSupportEmail}`}
                 className="transition hover:text-[var(--color-ink)]"
               >
                 {siteConfig.ownerSupportEmail}
-              </a>{" "}
-              or{" "}
+              </a>
+              . If Landsdowne is not responsive, escalate to{" "}
               <a
                 href={`mailto:${siteConfig.trusteeContactEmail}`}
                 className="transition hover:text-[var(--color-ink)]"
@@ -88,6 +85,19 @@ export default function NoticesLoginPage() {
               .
             </p>
           </SoftCard>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {noticeAccessItems.map((item, index) => (
+              <SoftCard key={item.title} tone={index === 0 ? "panel" : "card"}>
+                <h2 className="text-2xl font-medium text-[var(--color-ink)]">
+                  {item.title}
+                </h2>
+                <p className="body-copy-sm mt-4 sm:text-base">
+                  {item.body}
+                </p>
+              </SoftCard>
+            ))}
+          </div>
         </div>
       </section>
     </>

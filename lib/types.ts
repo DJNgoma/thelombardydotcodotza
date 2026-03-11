@@ -83,9 +83,6 @@ export interface SiteConfig {
   googleMapsUrl: string;
   managementCompany: string;
   managementSummary: string;
-  contactEmail: string;
-  contactPhoneDisplay: string;
-  contactPhoneHref: string;
   instagramUrl: string;
   ownerPortalUrl: string;
   ownerSupportEmail: string;

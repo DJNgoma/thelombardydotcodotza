@@ -58,22 +58,27 @@ export default function GovernancePage() {
           { href: "/news", label: "Trustee notices" },
           { href: "/management", label: "Management overview", variant: "secondary" },
         ]}
+        highlights={[
+          "Trustee oversight",
+          "Owner communication",
+          "CSOS context",
+        ]}
       />
 
       <section className="section-space-end-tight">
-        <div className="page-shell grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <SoftCard tone="panel">
-            <p className="eyebrow">Board of Trustees</p>
+        <div className="page-shell grid gap-6 xl:grid-cols-[0.84fr_1.16fr]">
+          <SoftCard tone="dark" padding="lg">
+            <p className="eyebrow text-on-dark-label">Board of Trustees</p>
             <div className="mt-6 space-y-4">
               {trustees.map((trustee) => (
                 <div
                   key={trustee.name}
-                  className="inset-surface radius-inset px-5 py-4"
+                  className="band-support-card radius-inset px-5 py-4"
                 >
-                  <p className="text-lg font-medium text-[var(--color-ink)]">
+                  <p className="text-lg font-medium text-on-dark">
                     {formatTrusteePublicName(trustee.name)}
                   </p>
-                  <p className="mt-1 text-sm text-[var(--color-ink-soft)]">
+                  <p className="mt-1 text-sm text-on-dark-muted">
                     {trustee.role}
                   </p>
                 </div>
@@ -98,30 +103,42 @@ export default function GovernancePage() {
 
       <section className="section-space-end">
         <div className="page-shell">
-          <SoftCard tone="feature" padding="lg">
+          <SoftCard tone="stone" padding="lg">
             <p className="eyebrow">Finance</p>
             <h2 className="display-title display-section mt-4 font-semibold text-[var(--color-ink)]">
               Levy responsibility and arrears communication.
             </h2>
-            <div className="mt-8 grid gap-4 md:grid-cols-2">
-              {financeItems.map((item) => (
-                <div
-                  key={item}
-                  className="body-copy-sm inset-surface radius-inset p-5"
-                >
-                  {item}
-                </div>
-              ))}
+            <div className="mt-8 grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="grid gap-4 sm:grid-cols-2">
+                {financeItems.slice(0, 2).map((item) => (
+                  <div
+                    key={item}
+                    className="body-copy-sm inset-surface radius-inset p-5"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {financeItems.slice(2).map((item) => (
+                  <div
+                    key={item}
+                    className="body-copy-sm inset-surface radius-inset p-5"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="body-copy-sm inset-surface radius-panel mt-6 px-5 py-4">
-              Owners who need account support can contact{" "}
+              Owners who need account support should contact Landsdowne at{" "}
               <a
                 href={`mailto:${siteConfig.ownerSupportEmail}`}
                 className="transition hover:text-[var(--color-ink)]"
               >
                 {siteConfig.ownerSupportEmail}
-              </a>{" "}
-              or{" "}
+              </a>
+              . If Landsdowne is not responsive, escalate to{" "}
               <a
                 href={`mailto:${siteConfig.trusteeContactEmail}`}
                 className="transition hover:text-[var(--color-ink)]"
