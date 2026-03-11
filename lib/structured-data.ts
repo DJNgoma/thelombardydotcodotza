@@ -13,7 +13,6 @@ export function organizationSchema() {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
-    sameAs: [siteConfig.instagramUrl],
     description: siteConfig.description,
   };
 }

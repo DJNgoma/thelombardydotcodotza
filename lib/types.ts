@@ -45,7 +45,6 @@ export interface SocialPost {
   title: string;
   summary: string;
   image: string;
-  href: string;
 }
 
 export type NearbyAmenityCategory =
@@ -83,7 +82,6 @@ export interface SiteConfig {
   googleMapsUrl: string;
   managementCompany: string;
   managementSummary: string;
-  instagramUrl: string;
   ownerPortalUrl: string;
   ownerSupportEmail: string;
   trusteeContactEmail: string;

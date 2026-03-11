@@ -10,12 +10,7 @@ function GalleryCard({
   featured?: boolean;
 }) {
   return (
-    <a
-      href={post.href}
-      target="_blank"
-      rel="noreferrer"
-      className="soft-card surface-card radius-card interactive-lift group overflow-hidden h-full"
-    >
+    <article className="soft-card surface-card radius-card interactive-lift group overflow-hidden h-full">
       <div
         className={`relative overflow-hidden ${
           featured
@@ -41,11 +36,8 @@ function GalleryCard({
         <p className="body-copy-sm mt-3">
           {post.summary}
         </p>
-        <p className="meta-label mt-4 text-[var(--color-sage-deep)]">
-          View source
-        </p>
       </div>
-    </a>
+    </article>
   );
 }
 
@@ -79,14 +71,6 @@ export function InstagramStrip() {
                   description="The visual character of the estate is shaped by its internal layout, modern apartment buildings, and the shared amenities residents use every day."
                   maxWidth="wide"
                 />
-                <a
-                  href={featuredPost.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-link mt-8"
-                >
-                  View The Luxury Lombardy profile
-                </a>
               </div>
             </div>
           </div>

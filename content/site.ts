@@ -16,7 +16,6 @@ export const siteConfig: SiteConfig = {
   managementCompany: "Landsdowne Property Group",
   managementSummary:
     "Landsdowne Property Group oversees operational management, maintenance coordination, resident support, and financial administration for the estate.",
-  instagramUrl: "https://www.instagram.com/theluxurylombardy/",
   ownerPortalUrl: "https://app.weconnectu.co.za",
   ownerSupportEmail: "connect@landsdowne.co.za",
   trusteeContactEmail: "trustees@thelombardy.co.za",
