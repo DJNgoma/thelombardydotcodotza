@@ -25,25 +25,21 @@ export const siteConfig: SiteConfig = {
     {
       title: "Landsdowne support",
       summary:
-        "Landsdowne Property Group handles day-to-day owner support, portal access help, and operational queries.",
+        "Landsdowne remains the primary contact for owner support, portal access help, and operational queries.",
       actionLabel: "Email Landsdowne",
       actionHref: "mailto:connect@landsdowne.co.za",
-      secondaryLabel: "Open owner portal",
-      secondaryHref: "https://app.weconnectu.co.za",
     },
     {
-      title: "Owner portal support",
+      title: "Owner portal",
       summary:
-        "Owners can sign in through WeConnectU for account records, levy information, and estate-issued documents.",
+        "Owners can sign in through WeConnectU for account records, levy information, circulars, and estate-issued documents.",
       actionLabel: "Open owner portal",
       actionHref: "https://app.weconnectu.co.za",
-      secondaryLabel: "Email Landsdowne",
-      secondaryHref: "mailto:connect@landsdowne.co.za",
     },
     {
       title: "Trustee escalation",
       summary:
-        "If Landsdowne is not responsive, owners may escalate support or governance concerns to the trustees.",
+        "If Landsdowne is not responsive, owners may escalate governance or support concerns to the trustees.",
       actionLabel: "Escalate to trustees",
       actionHref: "mailto:trustees@thelombardy.co.za",
     },

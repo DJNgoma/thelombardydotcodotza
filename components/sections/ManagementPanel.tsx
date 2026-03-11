@@ -54,7 +54,7 @@ export function ManagementPanel() {
               {siteConfig.managementContacts.map((contact, index) => (
                 <article
                   key={contact.title}
-                  className={`radius-card border p-5 ${
+                  className={`radius-card flex min-h-[18rem] flex-col border p-5 ${
                     index === 0
                       ? "surface-dark border-white/8"
                       : index === 1
@@ -62,8 +62,19 @@ export function ManagementPanel() {
                         : "inset-surface border-[var(--color-line)]"
                   }`}
                 >
+                  <p
+                    className={`meta-label ${
+                      index === 0 ? "text-on-dark-label" : "text-[var(--color-sage-deep)]"
+                    }`}
+                  >
+                    {index === 0
+                      ? "Primary support"
+                      : index === 1
+                        ? "Portal access"
+                        : "Escalation path"}
+                  </p>
                   <h3
-                    className={`text-xl font-medium ${
+                    className={`mt-4 text-[1.85rem] leading-[1.08] font-medium ${
                       index === 0 ? "text-on-dark" : "text-[var(--color-ink)]"
                     }`}
                   >
@@ -76,33 +87,19 @@ export function ManagementPanel() {
                   >
                     {contact.summary}
                   </p>
-                  <div className="mt-5 flex flex-wrap gap-4">
+                  <div className="mt-auto pt-7">
                     {contact.actionLabel && contact.actionHref ? (
                       <a
                         href={contact.actionHref}
-                        className={
+                        className={`inline-flex min-h-11 items-center justify-center rounded-full border px-4 text-[0.74rem] font-semibold uppercase tracking-[var(--tracking-ui)] transition ${
                           index === 0
-                            ? "text-sm font-semibold text-on-dark transition hover:text-white"
-                            : "text-link"
-                        }
+                            ? "border-white/14 bg-white/10 text-on-dark hover:bg-white/16 hover:text-white"
+                            : "border-[var(--color-line)] bg-white/86 text-[var(--color-ink)] hover:bg-white"
+                        }`}
                         target={contact.actionHref.startsWith("http") ? "_blank" : undefined}
                         rel={contact.actionHref.startsWith("http") ? "noreferrer" : undefined}
                       >
                         {contact.actionLabel}
-                      </a>
-                    ) : null}
-                    {contact.secondaryLabel && contact.secondaryHref ? (
-                      <a
-                        href={contact.secondaryHref}
-                        className={
-                          index === 0
-                            ? "text-sm font-semibold text-on-dark-muted transition hover:text-white"
-                            : "text-link"
-                        }
-                        target={contact.secondaryHref.startsWith("http") ? "_blank" : undefined}
-                        rel={contact.secondaryHref.startsWith("http") ? "noreferrer" : undefined}
-                      >
-                        {contact.secondaryLabel}
                       </a>
                     ) : null}
                   </div>
