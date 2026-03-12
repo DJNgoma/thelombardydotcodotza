@@ -31,10 +31,10 @@ export function MobileUtilityDrawer({
   const pathname = usePathname();
   const previousPathname = useRef(pathname);
   const residentLinks = utilityNavigation.filter(
-    (item) => item.label !== "The Lombardy Community Chat",
+    (item) => item.href !== siteConfig.communityChatPath,
   );
   const communityLink = utilityNavigation.find(
-    (item) => item.label === "The Lombardy Community Chat",
+    (item) => item.href === siteConfig.communityChatPath,
   );
 
   useEffect(() => {
@@ -248,7 +248,7 @@ export function MobileUtilityDrawer({
                   <div className="absolute inset-0 bg-gradient-to-t from-[rgba(18,24,20,0.72)] via-[rgba(18,24,20,0.16)] to-transparent" />
                   <div className="absolute inset-x-4 bottom-4">
                     <p className="meta-label text-on-dark-label">
-                      Community chat
+                      Estate WhatsApp
                     </p>
                     {communityLink ? (
                       <Link

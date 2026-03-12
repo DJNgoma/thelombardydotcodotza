@@ -9,9 +9,9 @@ import { buildPageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Community Chat",
+  title: "Estate WhatsApp",
   description:
-    "Guidance before joining The Lombardy community WhatsApp chat.",
+    "Guidance before joining The Lombardy estate WhatsApp group.",
   path: "/community-chat",
 });
 
@@ -37,17 +37,17 @@ export default function CommunityChatPage() {
         data={[
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Community Chat", path: "/community-chat" },
+            { name: "Estate WhatsApp", path: "/community-chat" },
           ]),
         ]}
       />
       <Breadcrumbs
-        items={[{ label: "Home", href: "/" }, { label: "Community Chat" }]}
+        items={[{ label: "Home", href: "/" }, { label: "Estate WhatsApp" }]}
       />
       <PageLead
-        eyebrow="Community Chat"
-        title="Read the context first before opening the estate WhatsApp group."
-        description="The Lombardy community chat is useful for informal resident conversation, but it is not the estate’s official support or governance channel. Use Landsdowne and the Estate Manager line for support matters before continuing to WhatsApp."
+        eyebrow="Estate WhatsApp"
+        title="Read this first before opening the estate WhatsApp group."
+        description="The Lombardy estate WhatsApp group is useful for informal resident conversation, but it is not the estate’s official support or governance channel. Use Landsdowne and the Estate Manager line for support matters before continuing to WhatsApp."
         actions={[
           { href: siteConfig.communityChatUrl, label: "Open WhatsApp group" },
           {

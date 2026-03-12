@@ -16,7 +16,7 @@ export const utilityNavigation: NavItem[] = [
   { label: "Finance Support", href: "/levy-resources" },
   { label: "Forms", href: "/forms" },
   {
-    label: "The Lombardy Community Chat",
+    label: "Estate WhatsApp",
     href: siteConfig.communityChatPath,
   },
 ];
