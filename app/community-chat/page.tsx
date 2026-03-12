@@ -22,7 +22,7 @@ const chatGuidelines = [
   },
   {
     title: "Not official support",
-    body: "Operational issues, owner access requests, levy questions, and formal complaints should still go to Landsdowne first rather than being handled in the chat.",
+    body: "Finance-related questions, owner access requests, and formal complaints should still go to Landsdowne first, while estate management issues should go to the Estate Manager line rather than the chat.",
   },
   {
     title: "Use respectfully",
@@ -47,7 +47,7 @@ export default function CommunityChatPage() {
       <PageLead
         eyebrow="Community Chat"
         title="Read the context first before opening the estate WhatsApp group."
-        description="The Lombardy community chat is useful for informal resident conversation, but it is not the estate’s official support or governance channel. Use it with the right expectations before continuing to WhatsApp."
+        description="The Lombardy community chat is useful for informal resident conversation, but it is not the estate’s official support or governance channel. Use Landsdowne and the Estate Manager line for support matters before continuing to WhatsApp."
         actions={[
           { href: siteConfig.communityChatUrl, label: "Open WhatsApp group" },
           {
@@ -71,9 +71,10 @@ export default function CommunityChatPage() {
               WhatsApp is for informal community conversation, not formal estate administration.
             </h2>
             <p className="body-copy-sm mt-5 text-on-dark-muted sm:text-base">
-              If you need help with owner access, portal support, levies,
-              operational issues, or governance escalation, use the formal
-              support paths first.
+              If you need help with owner access, finance-related queries, or
+              formal support, contact Landsdowne first. For estate management
+              issues, use the Estate Manager WhatsApp line before using the
+              resident group.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href={siteConfig.communityChatUrl}>
@@ -94,12 +95,12 @@ export default function CommunityChatPage() {
                 </a>
               </div>
               <div className="band-support-card radius-inset px-4 py-4">
-                <p className="meta-label text-on-dark-label">Escalation</p>
+                <p className="meta-label text-on-dark-label">Estate Manager</p>
                 <a
-                  href={`mailto:${siteConfig.trusteeContactEmail}`}
+                  href={siteConfig.estateManagerWhatsappUrl}
                   className="mt-2 block text-sm leading-6 text-on-dark transition hover:text-white"
                 >
-                  {siteConfig.trusteeContactEmail}
+                  {siteConfig.estateManagerWhatsapp}
                 </a>
               </div>
             </div>

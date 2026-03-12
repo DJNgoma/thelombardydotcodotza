@@ -12,7 +12,7 @@ import { breadcrumbSchema } from "@/lib/structured-data";
 export const metadata: Metadata = buildPageMetadata({
   title: "Estate Governance",
   description:
-    "Trustees, governance responsibilities, CSOS context, levy responsibility, and governance information for The Lombardy Lifestyle Estate.",
+    "Trustees, governance responsibilities, CSOS context, and owner support pathways for The Lombardy Lifestyle Estate.",
   path: "/governance",
 });
 
@@ -23,7 +23,7 @@ const governanceItems = [
   },
   {
     title: "Estate governance framework",
-    body: "The estate's governance framework supports accountable management of common property, financial obligations, maintenance priorities, and resident standards.",
+    body: "The estate's governance framework supports accountable management of common property, shared obligations, maintenance priorities, and resident standards.",
   },
   {
     title: "CSOS relationship",
@@ -32,10 +32,22 @@ const governanceItems = [
 ];
 
 const financeItems = [
-  "Levies are the main source of funding that keeps the estate operating effectively.",
-  "Owners are expected to keep levy accounts current so the estate can meet maintenance and service obligations.",
-  "Owners in arrears are encouraged to communicate early with the debtors department.",
-  "Acknowledgement of Debt processes may be used when owners need a structured repayment arrangement.",
+  {
+    title: "Finance contact",
+    body: "Finance-related owner matters are administered through Landsdowne.",
+  },
+  {
+    title: "Owner portal",
+    body: "Use WeConnectU for account records, circulars, and estate-issued documents if your access is already active.",
+  },
+  {
+    title: "Estate management issues",
+    body: `Operational estate matters can be sent to the Estate Manager on WhatsApp at ${siteConfig.estateManagerWhatsapp}.`,
+  },
+  {
+    title: "Escalation path",
+    body: "Trustees remain the escalation path if Landsdowne is not responsive on governance or support matters.",
+  },
 ];
 
 export default function GovernancePage() {
@@ -53,7 +65,7 @@ export default function GovernancePage() {
       <PageLead
         eyebrow="Estate Governance"
         title="Governance that gives owners and residents a clear line of accountability."
-        description="The estate is governed through a trustee-led structure supported by operational management. Governance covers estate standards, financial stewardship, maintenance priorities, and formal owner communication."
+        description="The estate is governed through a trustee-led structure supported by operational management. Governance covers estate standards, maintenance priorities, shared responsibilities, and formal owner communication."
         actions={[
           { href: "/news", label: "Trustee notices" },
           { href: "/management", label: "Management overview", variant: "secondary" },
@@ -104,39 +116,52 @@ export default function GovernancePage() {
       <section className="section-space-end">
         <div className="page-shell">
           <SoftCard tone="stone" padding="lg">
-            <p className="eyebrow">Finance</p>
+            <p className="eyebrow">Owner support</p>
             <h2 className="display-title display-section mt-4 font-semibold text-[var(--color-ink)]">
-              Levy responsibility and arrears communication.
+              Finance and estate administration contact paths.
             </h2>
             <div className="mt-8 grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
               <div className="grid gap-4 sm:grid-cols-2">
                 {financeItems.slice(0, 2).map((item) => (
                   <div
-                    key={item}
+                    key={item.title}
                     className="body-copy-sm inset-surface radius-inset p-5"
                   >
-                    {item}
+                    <p className="meta-label text-[var(--color-sage-deep)]">
+                      {item.title}
+                    </p>
+                    <p className="mt-3">{item.body}</p>
                   </div>
                 ))}
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 {financeItems.slice(2).map((item) => (
                   <div
-                    key={item}
+                    key={item.title}
                     className="body-copy-sm inset-surface radius-inset p-5"
                   >
-                    {item}
+                    <p className="meta-label text-[var(--color-sage-deep)]">
+                      {item.title}
+                    </p>
+                    <p className="mt-3">{item.body}</p>
                   </div>
                 ))}
               </div>
             </div>
             <div className="body-copy-sm inset-surface radius-panel mt-6 px-5 py-4">
-              Owners who need account support should contact Landsdowne at{" "}
+              Owners who need finance or administrative support should contact Landsdowne at{" "}
               <a
                 href={`mailto:${siteConfig.ownerSupportEmail}`}
                 className="transition hover:text-[var(--color-ink)]"
               >
                 {siteConfig.ownerSupportEmail}
+              </a>
+              . Estate management issues can also be sent to the Estate Manager on{" "}
+              <a
+                href={siteConfig.estateManagerWhatsappUrl}
+                className="transition hover:text-[var(--color-ink)]"
+              >
+                WhatsApp at {siteConfig.estateManagerWhatsapp}
               </a>
               . If Landsdowne is not responsive, escalate to{" "}
               <a

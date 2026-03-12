@@ -209,9 +209,10 @@ export function MobileUtilityDrawer({
               <div className="rounded-[1.7rem] border border-white/10 bg-white/6 p-5">
                 <p className="meta-label text-on-dark-label">Support</p>
                 <p className="mt-3 text-sm leading-6 text-on-dark-muted">
-                  Landsdowne remains the primary support path for owner access,
-                  operational queries, and account assistance. Trustees are for
-                  escalation if Landsdowne is not responsive.
+                  Contact Landsdowne first for finance queries, owner access,
+                  and general support. Estate management issues can go to the
+                  Estate Manager WhatsApp line. Trustees are for escalation if
+                  Landsdowne is not responsive.
                 </p>
                 <div className="mt-4 space-y-2 text-sm">
                   <a
@@ -219,6 +220,12 @@ export function MobileUtilityDrawer({
                     className="block text-on-dark transition hover:text-white"
                   >
                     {siteConfig.ownerSupportEmail}
+                  </a>
+                  <a
+                    href={siteConfig.estateManagerWhatsappUrl}
+                    className="block text-on-dark transition hover:text-white"
+                  >
+                    {siteConfig.estateManagerWhatsapp}
                   </a>
                   <a
                     href={`mailto:${siteConfig.trusteeContactEmail}`}

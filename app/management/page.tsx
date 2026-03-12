@@ -12,7 +12,7 @@ import { breadcrumbSchema } from "@/lib/structured-data";
 export const metadata: Metadata = buildPageMetadata({
   title: "Management",
   description:
-    "Operational management, maintenance coordination, resident support, and financial administration for The Lombardy Lifestyle Estate.",
+    "Operational management, resident support, and owner administration for The Lombardy Lifestyle Estate.",
   path: "/management",
 });
 
@@ -27,11 +27,11 @@ const managementFunctions = [
   },
   {
     title: "Resident support",
-    body: "Owners, residents, and tenants rely on management channels for practical issue escalation, bookings, and procedural guidance.",
+    body: "Owners, residents, and tenants rely on Landsdowne and the Estate Manager line for day-to-day support, issue reporting, and practical guidance.",
   },
   {
-    title: "Financial administration",
-    body: "Levy administration, arrears communication, and debtor support are coordinated through the relevant Landsdowne functions.",
+    title: "Owner administration",
+    body: "Finance-related owner matters and account support are administered through Landsdowne rather than detailed public-facing process notes.",
   },
 ];
 
@@ -50,14 +50,21 @@ export default function ManagementPage() {
       <PageLead
         eyebrow="Management"
         title="Operational support and estate administration managed by Landsdowne."
-        description="The Lombardy Lifestyle Estate’s operational management is handled by Landsdowne Property Group. Management supports maintenance coordination, resident queries, owner communication, and financial administration processes."
+        description="The Lombardy Lifestyle Estate’s operational management is handled by Landsdowne Property Group. Landsdowne supports maintenance coordination, resident queries, estate administration, and finance-related owner support."
         actions={[
-          { href: siteConfig.ownerPortalPath, label: "Owner portal" },
-          { href: "/levy-resources", label: "Levy information", variant: "secondary" },
+          {
+            href: `mailto:${siteConfig.ownerSupportEmail}`,
+            label: "Email Landsdowne",
+          },
+          {
+            href: siteConfig.estateManagerWhatsappUrl,
+            label: "WhatsApp Estate Manager",
+            variant: "secondary",
+          },
         ]}
         highlights={[
           "Landsdowne support",
-          "Owner portal access",
+          "Estate Manager WhatsApp",
           "Trustee escalation",
         ]}
       />
@@ -67,10 +74,17 @@ export default function ManagementPage() {
           <SoftCard tone="dark" padding="lg">
             <p className="eyebrow text-on-dark-label">Support pathway</p>
             <h2 className="display-title display-section mt-4 font-semibold text-on-dark">
-              Landsdowne remains the first point of contact for owner access, operational queries, and finance support.
+              Landsdowne is the first point of contact for finance queries, owner administration, and general estate matters.
             </h2>
             <p className="mt-5 text-sm leading-7 text-on-dark-muted sm:text-base">
-              Owners should use Landsdowne for ordinary support and portal access. Trustees remain an escalation path if Landsdowne is not responsive.
+              For day-to-day estate management issues, message the Estate Manager on{" "}
+              <a
+                href={siteConfig.estateManagerWhatsappUrl}
+                className="text-on-dark transition hover:text-white"
+              >
+                WhatsApp at {siteConfig.estateManagerWhatsapp}
+              </a>
+              . Trustees remain an escalation path if Landsdowne is not responsive.
             </p>
           </SoftCard>
 

@@ -88,6 +88,8 @@ export interface SiteConfig {
   managementSummary: string;
   ownerPortalUrl: string;
   ownerSupportEmail: string;
+  estateManagerWhatsapp: string;
+  estateManagerWhatsappUrl: string;
   trusteeContactEmail: string;
   communityChatUrl: string;
   managementContacts: ContactCard[];

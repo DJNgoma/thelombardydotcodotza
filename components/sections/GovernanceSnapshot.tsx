@@ -3,6 +3,7 @@ import { ButtonLink } from "@/components/ui/ButtonLink";
 import { InfoList } from "@/components/ui/InfoList";
 import { Pill } from "@/components/ui/Pill";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { siteConfig } from "@/content/site";
 import { formatTrusteePublicName } from "@/lib/formatters";
 
 export function GovernanceSnapshot() {
@@ -14,7 +15,7 @@ export function GovernanceSnapshot() {
             <SectionHeading
               eyebrow="Governance"
               title="Governance with visible accountability."
-              description="The trustees oversee estate standards, financial stewardship, policy direction, and owner communication within the body corporate framework."
+              description="The trustees oversee estate standards, governance stewardship, policy direction, and owner communication within the body corporate framework."
               tone="dark"
             />
             <div className="mt-8 flex flex-wrap gap-3">
@@ -44,7 +45,7 @@ export function GovernanceSnapshot() {
                 <div className="band-support-card radius-inset px-4 py-4">
                   <p className="meta-label text-on-dark-label">Owner communication</p>
                   <p className="mt-2 text-sm leading-6 text-on-dark-muted">
-                    Meeting notices, levy updates, and trustee communication remain structured and owner-facing.
+                    Meeting notices, owner updates, and trustee communication remain structured and owner-facing.
                   </p>
                 </div>
               </div>
@@ -80,21 +81,21 @@ export function GovernanceSnapshot() {
               <div className="soft-card surface-card radius-card px-6 py-7">
                 <Pill>Finance overview</Pill>
                 <p className="mt-5 text-base leading-7 text-[var(--color-ink-soft)]">
-                  Levies are the main source of funding that keeps the estate operating effectively.
+                  Finance-related owner matters are administered through Landsdowne.
                 </p>
               </div>
               <div className="soft-card surface-card radius-card px-6 py-7">
                 <InfoList
                   items={[
-                    "Levy income supports maintenance, service providers, and essential estate obligations.",
+                    `Contact Landsdowne at ${siteConfig.ownerSupportEmail} for finance queries and owner administration support.`,
                   ]}
                 />
               </div>
               <div className="soft-card surface-card radius-card px-6 py-7">
                 <InfoList
                   items={[
-                    "Owners in arrears are encouraged to communicate proactively with the debtors department.",
-                    "Acknowledgement of Debt arrangements can be used where full settlement is not immediately possible.",
+                    `Estate management issues can be sent to the Estate Manager on WhatsApp at ${siteConfig.estateManagerWhatsapp}.`,
+                    "Trustees remain the escalation path if Landsdowne is not responsive.",
                   ]}
                 />
               </div>

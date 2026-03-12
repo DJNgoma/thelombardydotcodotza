@@ -33,7 +33,7 @@ export default async function HomePage() {
       <NoticeCardGrid
         notices={homepageNotices}
         title="Recent notices and estate updates"
-        description="Meeting notices, maintenance work, levy communication, and estate updates are published here for owners and residents."
+        description="Meeting notices, maintenance work, owner updates, and estate announcements are published here for owners and residents."
       />
       <LifestyleAmenities />
       <GovernanceSnapshot />

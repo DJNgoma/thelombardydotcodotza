@@ -13,7 +13,7 @@ export const primaryNavigation: NavItem[] = [
 export const utilityNavigation: NavItem[] = [
   { label: "Owner Portal", href: siteConfig.ownerPortalPath },
   { label: "Estate Rules", href: "/estate-rules" },
-  { label: "Levy Information", href: "/levy-resources" },
+  { label: "Finance Support", href: "/levy-resources" },
   { label: "Forms", href: "/forms" },
   {
     label: "The Lombardy Community Chat",

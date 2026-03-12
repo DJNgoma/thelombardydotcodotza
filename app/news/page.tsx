@@ -14,7 +14,7 @@ import { breadcrumbSchema } from "@/lib/structured-data";
 export const metadata: Metadata = buildPageMetadata({
   title: "News & Notices",
   description:
-    "Estate notices, maintenance updates, levy communication, meeting announcements, and trustee updates for The Lombardy Lifestyle Estate.",
+    "Estate notices, maintenance updates, owner communication, meeting announcements, and trustee updates for The Lombardy Lifestyle Estate.",
   path: "/news",
 });
 
@@ -52,7 +52,7 @@ export default async function NewsPage() {
       <PageLead
         eyebrow="News & Notices"
         title="Current estate communication for owners and residents."
-        description="Maintenance programmes, levy communication, trustee notices, and meeting announcements are published here in a clear estate archive."
+        description="Maintenance programmes, owner communication, trustee notices, and meeting announcements are published here in a clear estate archive."
         actions={[
           { href: "/governance", label: "Governance page" },
           { href: "/management", label: "Management overview", variant: "secondary" },
@@ -60,7 +60,7 @@ export default async function NewsPage() {
         highlights={[
           "Maintenance updates",
           "Meeting notices",
-          "Levy communication",
+          "Owner communication",
         ]}
       />
 
@@ -74,7 +74,7 @@ export default async function NewsPage() {
                   The March 2026 newsletter remains available as a direct reference.
                 </h2>
                 <p className="body-copy-sm mt-4 sm:text-base">
-                  The latest newsletter includes maintenance, finance, tenant compliance, and governance updates for the estate.
+                  The latest newsletter includes maintenance, owner support, tenant compliance, and governance updates for the estate.
                 </p>
               </div>
               {hasNewsletterPdf ? (

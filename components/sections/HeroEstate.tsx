@@ -37,10 +37,6 @@ const heroFacts = [
     title: "Secure arrival",
     summary: "Access control and managed visitor handling.",
   },
-  {
-    title: "Resident standards",
-    summary: "Clear governance, notices, and estate rules.",
-  },
 ];
 
 interface HeroEstateProps {

@@ -37,7 +37,15 @@ export function EstateMapCard() {
                 >
                   {siteConfig.ownerSupportEmail}
                 </a>{" "}
-                through Landsdowne. If Landsdowne is not responsive, escalate to{" "}
+                through Landsdowne for finance and owner administration matters.
+                Estate management issues can be sent to the Estate Manager on{" "}
+                <a
+                  href={siteConfig.estateManagerWhatsappUrl}
+                  className="transition hover:text-[var(--color-ink)]"
+                >
+                  WhatsApp at {siteConfig.estateManagerWhatsapp}
+                </a>
+                . If Landsdowne is not responsive, escalate to{" "}
                 <a
                   href={`mailto:${siteConfig.trusteeContactEmail}`}
                   className="transition hover:text-[var(--color-ink)]"

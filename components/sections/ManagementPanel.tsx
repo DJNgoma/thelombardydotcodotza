@@ -21,7 +21,7 @@ export function ManagementPanel() {
               </div>
               <SectionHeading
                 eyebrow="Managed by Landsdowne"
-                title="Operational management, resident support, and maintenance oversight."
+                title="Operational management, owner support, and contact pathways."
                 description={siteConfig.managementSummary}
               />
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -36,21 +36,21 @@ export function ManagementPanel() {
                     Landsdowne support
                   </p>
                   <p className="mt-2 text-sm leading-6 text-[var(--color-ink-soft)]">
-                    Landsdowne remains the primary path for portal access, operational queries, and finance-related owner support.
+                    Contact Landsdowne first for finance queries, owner administration, and general estate matters.
                   </p>
                 </div>
                 <div className="inset-surface radius-inset px-4 py-4">
                   <p className="meta-label text-[var(--color-sage-deep)]">
-                    Trustee escalation
+                    Estate Manager WhatsApp
                   </p>
                   <p className="mt-2 text-sm leading-6 text-[var(--color-ink-soft)]">
-                    Trustees provide an escalation path when Landsdowne is not responsive on governance or support matters.
+                    Estate management issues can be sent to the Estate Manager on WhatsApp at {siteConfig.estateManagerWhatsapp}.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2 2xl:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2 2xl:grid-cols-4">
               {siteConfig.managementContacts.map((contact, index) => (
                 <article
                   key={contact.title}
@@ -70,8 +70,10 @@ export function ManagementPanel() {
                     {index === 0
                       ? "Primary support"
                       : index === 1
-                        ? "Portal access"
-                        : "Escalation path"}
+                        ? "Estate issues"
+                        : index === 2
+                          ? "Portal access"
+                          : "Escalation path"}
                   </p>
                   <h3
                     className={`mt-4 text-[1.85rem] leading-[1.08] font-medium ${

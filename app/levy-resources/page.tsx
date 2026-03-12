@@ -8,17 +8,29 @@ import { buildPageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Levy Information",
+  title: "Finance Support",
   description:
-    "Levy guidance, payment support context, and owner finance resources for The Lombardy Lifestyle Estate.",
+    "Finance-related owner support and Landsdowne contact guidance for The Lombardy Lifestyle Estate.",
   path: "/levy-resources",
 });
 
-const levyResources = [
-  "Levies are the main source of funding that keeps the estate operating effectively.",
-  "Owners are responsible for keeping levy accounts current so the estate can meet maintenance, service, and operational obligations.",
-  "Where an account falls into arrears, early communication with the relevant debtors function remains important.",
-  "Acknowledgement of Debt arrangements may be used where a structured repayment plan is required.",
+const financeSupportItems = [
+  {
+    title: "Finance contact",
+    body: "Finance-related owner matters are administered through Landsdowne.",
+  },
+  {
+    title: "Owner records",
+    body: "If you already have owner portal access, use WeConnectU for account records, circulars, and estate-issued documents.",
+  },
+  {
+    title: "Management issues",
+    body: "Estate management issues can be sent to the Estate Manager on WhatsApp for operational follow-up.",
+  },
+  {
+    title: "Escalation",
+    body: "If Landsdowne is not responsive, trustees remain the escalation path for unresolved support matters.",
+  },
 ];
 
 export default function LevyResourcesPage() {
@@ -28,30 +40,30 @@ export default function LevyResourcesPage() {
         data={[
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Levy Information", path: "/levy-resources" },
+            { name: "Finance Support", path: "/levy-resources" },
           ]),
         ]}
       />
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Levy Information" }]} />
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Finance Support" }]} />
       <PageLead
-        eyebrow="Levy Information"
-        title="Levy guidance and owner finance support."
-        description="Levies fund the estate’s core operations, maintenance obligations, and service delivery. This page summarises the main finance principles communicated to owners."
+        eyebrow="Finance Support"
+        title="Finance-related owner matters should be directed to Landsdowne."
+        description="Finance support for owners is administered through Landsdowne. Use the contact path below rather than relying on detailed public-facing process notes."
         actions={[
           {
             href: `mailto:${siteConfig.ownerSupportEmail}`,
             label: "Email Landsdowne",
           },
           {
-            href: `mailto:${siteConfig.trusteeContactEmail}`,
-            label: "Trustee escalation",
+            href: siteConfig.ownerPortalPath,
+            label: "Owner portal",
             variant: "secondary",
           },
         ]}
         highlights={[
-          "Levy guidance",
-          "Arrears communication",
-          "AOD support",
+          "Landsdowne contact",
+          "Owner portal",
+          "Trustee escalation",
         ]}
       />
 
@@ -60,15 +72,22 @@ export default function LevyResourcesPage() {
           <SoftCard tone="dark" padding="lg">
             <p className="eyebrow text-on-dark-label">Owner finance support</p>
             <h2 className="display-title display-section mt-4 font-semibold text-on-dark">
-              Levy communication is strongest when owners engage early and keep support channels open.
+              Landsdowne administers finance-related support for owners.
             </h2>
             <p className="mt-5 text-sm leading-7 text-on-dark-muted sm:text-base">
-              Owners who need assistance should contact Landsdowne at{" "}
+              For finance-related queries, contact Landsdowne at{" "}
               <a
                 href={`mailto:${siteConfig.ownerSupportEmail}`}
                 className="text-on-dark transition hover:text-white"
               >
                 {siteConfig.ownerSupportEmail}
+              </a>
+              . Estate management issues can be sent to the Estate Manager on{" "}
+              <a
+                href={siteConfig.estateManagerWhatsappUrl}
+                className="text-on-dark transition hover:text-white"
+              >
+                WhatsApp at {siteConfig.estateManagerWhatsapp}
               </a>
               . If Landsdowne is not responsive, escalations may be sent to{" "}
               <a
@@ -82,10 +101,13 @@ export default function LevyResourcesPage() {
           </SoftCard>
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {levyResources.map((item, index) => (
-              <SoftCard key={item} tone={index === 0 ? "stone" : "card"}>
-                <p className="body-copy-sm sm:text-base">
-                  {item}
+            {financeSupportItems.map((item, index) => (
+              <SoftCard key={item.title} tone={index === 0 ? "stone" : "card"}>
+                <h2 className="text-2xl font-medium text-[var(--color-ink)]">
+                  {item.title}
+                </h2>
+                <p className="body-copy-sm mt-4 sm:text-base">
+                  {item.body}
                 </p>
               </SoftCard>
             ))}

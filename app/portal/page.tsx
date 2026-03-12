@@ -24,7 +24,7 @@ const requestAccessHref = `mailto:${siteConfig.ownerSupportEmail}?subject=${enco
 const portalSupportSteps = [
   {
     title: "Already have portal access?",
-    body: "Open WeConnectU to view levy information, account records, circulars, and estate-issued owner documents.",
+    body: "Open WeConnectU to view account records, circulars, and estate-issued owner documents.",
     actionLabel: "Go to WeConnectU login",
     actionHref: siteConfig.ownerPortalUrl,
     tone: "dark" as const,
@@ -46,7 +46,7 @@ const portalSupportSteps = [
 ];
 
 const ownerPortalUses = [
-  "Levy statements and account records",
+  "Account records and owner statements",
   "Owner circulars and controlled documents",
   "Estate-issued notices relevant to owners",
 ];

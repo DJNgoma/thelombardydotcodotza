@@ -17,9 +17,11 @@ export const siteConfig: SiteConfig = {
   googleMapsUrl: "https://maps.app.goo.gl/qRVSgYrRRwUoJNuX9",
   managementCompany: "Landsdowne Property Group",
   managementSummary:
-    "Landsdowne Property Group oversees operational management, maintenance coordination, resident support, and financial administration for the estate.",
+    "Landsdowne Property Group administers owner support, finance-related queries, and general estate management for the estate.",
   ownerPortalUrl: "https://app.weconnectu.co.za",
   ownerSupportEmail: "connect@landsdowne.co.za",
+  estateManagerWhatsapp: "+27 68 646 2895",
+  estateManagerWhatsappUrl: "https://wa.me/27686462895",
   trusteeContactEmail: "trustees@thelombardy.co.za",
   communityChatUrl:
     "https://chat.whatsapp.com/Jno37QOdorDELEFCzufmrc?mode=hqctcli",
@@ -27,14 +29,21 @@ export const siteConfig: SiteConfig = {
     {
       title: "Landsdowne support",
       summary:
-        "Landsdowne remains the primary contact for owner support, portal access help, and operational queries.",
+        "For finance queries, owner administration, and general estate matters, contact Landsdowne first.",
       actionLabel: "Email Landsdowne",
       actionHref: "mailto:connect@landsdowne.co.za",
     },
     {
+      title: "Estate Manager WhatsApp",
+      summary:
+        "Estate management issues can be sent directly to the Estate Manager on WhatsApp for operational follow-up.",
+      actionLabel: "WhatsApp the Estate Manager",
+      actionHref: "https://wa.me/27686462895",
+    },
+    {
       title: "Owner portal",
       summary:
-        "Owners can sign in through WeConnectU for account records, levy information, circulars, and estate-issued documents.",
+        "Owners can sign in through WeConnectU for account records, circulars, and estate-issued documents.",
       actionLabel: "Open owner portal",
       actionHref: "/portal",
     },
