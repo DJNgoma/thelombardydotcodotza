@@ -110,16 +110,18 @@ export function MobileUtilityDrawer({
       <div className="absolute inset-0 overflow-y-auto bg-[radial-gradient(circle_at_top_left,rgba(148,164,140,0.16),transparent_28%),linear-gradient(180deg,rgba(26,33,28,0.985),rgba(18,24,20,0.995))] text-on-dark">
         <div className="page-shell flex min-h-screen flex-col py-4 sm:py-5">
           <div className="flex items-center justify-between gap-4 rounded-[1.85rem] border border-white/10 bg-white/6 px-4 py-3 sm:px-5">
-            <div>
-              <p className="eyebrow text-on-dark-label">Lifestyle Estate</p>
-              <h2 className="brand-wordmark mt-1 text-[2.5rem] text-on-dark sm:text-[2.8rem]">
+            <div className="min-w-0">
+              <p className="text-[0.62rem] font-semibold tracking-[0.22em] uppercase text-on-dark-label sm:text-[0.68rem]">
+                Lifestyle Estate
+              </p>
+              <h2 className="brand-wordmark mt-1.5 text-[2.45rem] text-on-dark sm:text-[2.8rem]">
                 The Lombardy
               </h2>
             </div>
             <button
               type="button"
               onClick={onClose}
-              className="inline-flex min-h-11 items-center rounded-full border border-white/14 bg-white/8 px-4 text-[0.76rem] font-semibold uppercase tracking-[var(--tracking-ui)] text-on-dark transition hover:bg-white/12"
+              className="inline-flex min-h-11 shrink-0 items-center rounded-full border border-white/14 bg-white/8 px-4 text-[0.72rem] font-semibold uppercase tracking-[var(--tracking-ui)] text-on-dark transition hover:bg-white/12"
             >
               Close
             </button>
@@ -167,15 +169,13 @@ export function MobileUtilityDrawer({
             </div>
 
             <div className="grid gap-4">
-              <a
-                href={siteConfig.ownerPortalUrl}
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                href={siteConfig.ownerPortalPath}
                 onClick={onClose}
                 className="inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--color-stone)] px-5 text-[0.8rem] font-semibold uppercase tracking-[var(--tracking-ui)] text-[var(--color-ink)] transition hover:bg-[#e8dccd]"
               >
                 Owner Portal
-              </a>
+              </Link>
 
               <div className="rounded-[1.7rem] border border-white/10 bg-white/6 p-5">
                 <p className="meta-label text-on-dark-label">Resident links</p>
@@ -244,15 +244,13 @@ export function MobileUtilityDrawer({
                       Community chat
                     </p>
                     {communityLink ? (
-                      <a
+                      <Link
                         href={communityLink.href}
-                        target="_blank"
-                        rel="noreferrer"
                         onClick={onClose}
                         className="mt-2 inline-flex text-sm font-semibold text-on-dark transition hover:text-white"
                       >
                         {communityLink.label}
-                      </a>
+                      </Link>
                     ) : null}
                   </div>
                 </div>

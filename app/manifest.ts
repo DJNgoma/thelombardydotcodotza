@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { siteBuildId } from "@/lib/build";
 
 export const dynamic = "force-static";
 
@@ -6,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "The Lombardy Lifestyle Estate",
     short_name: "The Lombardy",
-  description:
+    description:
       "Resident notices, governance, management information, and amenities for The Lombardy Lifestyle Estate, South Africa.",
     start_url: "/",
     display: "standalone",
@@ -14,7 +15,7 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#465446",
     icons: [
       {
-        src: "/icon.svg",
+        src: `/icon.svg?v=${siteBuildId}`,
         sizes: "any",
         type: "image/svg+xml",
       },

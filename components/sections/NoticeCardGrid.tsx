@@ -93,7 +93,7 @@ export function NoticeCardGrid({
               </div>
             </div>
           ) : (
-            <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
               {notices.map((notice) => (
                 <article
                   key={notice.slug}

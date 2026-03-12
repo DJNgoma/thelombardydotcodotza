@@ -2,22 +2,10 @@ import Image from "next/image";
 import { estateGalleryPosts } from "@/content/social";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-function GalleryCard({
-  post,
-  featured = false,
-}: {
-  post: (typeof estateGalleryPosts)[number];
-  featured?: boolean;
-}) {
+function GalleryCard({ post }: { post: (typeof estateGalleryPosts)[number] }) {
   return (
-    <article className="soft-card surface-card radius-card interactive-lift group overflow-hidden h-full">
-      <div
-        className={`relative overflow-hidden ${
-          featured
-            ? "aspect-[16/10] xl:min-h-[35rem]"
-            : "aspect-[4/5] sm:aspect-[4/4.5]"
-        }`}
-      >
+    <article className="soft-card surface-card radius-card interactive-lift group h-full overflow-hidden">
+      <div className="relative aspect-[4/3] overflow-hidden">
         <Image
           src={post.image}
           alt={post.title}
@@ -25,12 +13,8 @@ function GalleryCard({
           className="object-cover transition duration-500 group-hover:scale-[1.02]"
         />
       </div>
-      <div className={featured ? "p-6 sm:p-7" : "p-5"}>
-        <h3
-          className={`font-medium text-[var(--color-ink)] ${
-            featured ? "text-2xl sm:text-[1.8rem]" : "text-lg"
-          }`}
-        >
+      <div className="p-5 sm:p-6">
+        <h3 className="text-[1.4rem] font-medium text-[var(--color-ink)] sm:text-[1.55rem]">
           {post.title}
         </h3>
         <p className="body-copy-sm mt-3">
@@ -42,46 +26,25 @@ function GalleryCard({
 }
 
 export function InstagramStrip() {
-  const [featuredPost, ...supportingPosts] = estateGalleryPosts;
-
-  if (!featuredPost) {
+  if (!estateGalleryPosts.length) {
     return null;
   }
 
   return (
     <section className="section-space">
       <div className="page-shell">
-        <div className="grid gap-5 xl:grid-cols-[0.74fr_1.26fr]">
-          <div className="soft-card surface-stone radius-feature overflow-hidden p-3">
-            <div className="grid gap-3 lg:grid-rows-[0.9fr_auto]">
-              <div className="radius-panel relative min-h-[15rem] overflow-hidden lg:min-h-[22rem]">
-                <Image
-                  src="/images/inspiration/garden-walkway.jpg"
-                  alt="Residential garden walkway reference."
-                  fill
-                  sizes="(max-width: 1279px) 100vw, 33vw"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(18,24,20,0.3)] via-transparent to-transparent" />
-              </div>
-              <div className="px-3 pb-3 sm:px-4 sm:pb-4">
-                <SectionHeading
-                  eyebrow="Estate gallery"
-                  title="A closer look at the buildings, shared spaces, and residential setting."
-                  description="The visual character of the estate is shaped by its internal layout, modern apartment buildings, and the shared amenities residents use every day."
-                  maxWidth="wide"
-                />
-              </div>
-            </div>
-          </div>
+        <div className="soft-card surface-feature radius-feature px-6 py-7 sm:px-10 sm:py-10">
+          <SectionHeading
+            eyebrow="Estate gallery"
+            title="Landscaping, gathering spaces, and wellness amenities in one tighter overview."
+            description="The desktop gallery now reads as a single section instead of oversized standalone cards, while still showing the estate’s quieter residential character."
+            maxWidth="wide"
+          />
 
-          <div className="grid gap-5 xl:grid-cols-[1.14fr_0.86fr]">
-            <GalleryCard post={featuredPost} featured />
-            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-1">
-              {supportingPosts.map((post) => (
-                <GalleryCard key={post.id} post={post} />
-              ))}
-            </div>
+          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {estateGalleryPosts.map((post) => (
+              <GalleryCard key={post.id} post={post} />
+            ))}
           </div>
         </div>
       </div>

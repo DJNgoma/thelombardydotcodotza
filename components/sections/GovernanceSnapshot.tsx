@@ -9,7 +9,7 @@ export function GovernanceSnapshot() {
   return (
     <section className="section-space">
       <div className="page-shell">
-        <div className="grid gap-5 xl:grid-cols-[0.86fr_1.14fr]">
+        <div className="grid gap-6 xl:grid-cols-[0.86fr_1.14fr]">
           <div className="soft-card surface-dark radius-feature px-6 py-7 sm:px-8 sm:py-9">
             <SectionHeading
               eyebrow="Governance"
@@ -51,7 +51,7 @@ export function GovernanceSnapshot() {
             </div>
           </div>
 
-          <div className="grid gap-5">
+          <div className="grid gap-6">
             <div className="soft-card surface-stone radius-feature px-6 py-7 sm:px-8 sm:py-8">
               <div className="flex items-center justify-between gap-4">
                 <Pill>Board of Trustees</Pill>
@@ -76,7 +76,7 @@ export function GovernanceSnapshot() {
               </div>
             </div>
 
-            <div className="grid gap-5 md:grid-cols-3">
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
               <div className="soft-card surface-card radius-card px-6 py-7">
                 <Pill>Finance overview</Pill>
                 <p className="mt-5 text-base leading-7 text-[var(--color-ink-soft)]">

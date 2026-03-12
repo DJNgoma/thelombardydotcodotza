@@ -9,6 +9,8 @@ export const siteConfig: SiteConfig = {
   ogImage: "/images/estate/estate-aerial-clean.jpg",
   intro:
     "The Lombardy Lifestyle Estate offers secure, modern residential living within a managed community environment.",
+  ownerPortalPath: "/portal",
+  communityChatPath: "/community-chat",
   locationLabel: "The Lombardy Lifestyle Estate, Lombardy Road, Broadacres, Johannesburg, South Africa",
   googleMapsEmbedUrl:
     "https://www.google.com/maps?q=The+Lombardy+Lifestyle+Estate,+Lombardy+Road,+Broadacres,+Johannesburg,+South+Africa&output=embed",
@@ -34,7 +36,7 @@ export const siteConfig: SiteConfig = {
       summary:
         "Owners can sign in through WeConnectU for account records, levy information, circulars, and estate-issued documents.",
       actionLabel: "Open owner portal",
-      actionHref: "https://app.weconnectu.co.za",
+      actionHref: "/portal",
     },
     {
       title: "Trustee escalation",

@@ -46,7 +46,7 @@ export default function NoticesLoginPage() {
         title="Owner-specific circulars and governance documents are handled through secure access."
         description="General notices remain available in the public notices archive. Owner-specific packs, circulars, and controlled governance material should be accessed through the owner portal."
         actions={[
-          { href: siteConfig.ownerPortalUrl, label: "Open owner portal" },
+          { href: siteConfig.ownerPortalPath, label: "Open owner portal" },
           {
             href: `mailto:${siteConfig.ownerSupportEmail}`,
             label: "Email Landsdowne support",

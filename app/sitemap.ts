@@ -16,6 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/management",
     "/estate-rules",
     "/portal",
+    "/community-chat",
     "/notices-login",
     "/levy-resources",
     "/forms",

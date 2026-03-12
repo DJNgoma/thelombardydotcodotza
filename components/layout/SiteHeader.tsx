@@ -31,19 +31,19 @@ export function SiteHeader() {
     <>
       <header className="fixed inset-x-0 top-0 z-30">
         <div className="page-shell pt-2 sm:pt-3">
-          <div className="soft-card surface-feature radius-feature flex items-center justify-between gap-4 px-4 py-3 sm:px-5 sm:py-3.5 lg:grid lg:grid-cols-[auto_1fr_auto] lg:px-6 xl:px-7">
-            <Link href="/" className="min-w-0 shrink-0 lg:pr-6">
-              <span className="block text-[0.66rem] font-semibold tracking-[var(--tracking-eyebrow)] uppercase text-[var(--color-sage-deep)] sm:text-[0.7rem]">
+          <div className="soft-card surface-feature radius-feature flex items-center justify-between gap-4 px-4 py-3 sm:px-5 sm:py-3.5 lg:grid lg:grid-cols-[minmax(0,18rem)_1fr_auto] lg:gap-6 lg:px-6 xl:grid-cols-[minmax(0,19rem)_1fr_auto] xl:px-7">
+            <Link href="/" className="min-w-0 shrink-0 lg:pr-4">
+              <span className="block text-[0.62rem] font-semibold tracking-[0.22em] uppercase text-[var(--color-sage-deep)] sm:text-[0.68rem]">
                 Lifestyle Estate
               </span>
-              <span className="brand-wordmark mt-1 block text-[2.25rem] text-[var(--color-ink)] sm:text-[2.55rem]">
+              <span className="brand-wordmark mt-1.5 block text-[2.5rem] text-[var(--color-ink)] sm:text-[2.85rem] lg:text-[3rem] xl:text-[3.15rem]">
                 The Lombardy
               </span>
             </Link>
 
             <nav
               aria-label="Primary"
-              className="hidden items-center justify-center gap-1 lg:flex xl:gap-2"
+              className="hidden items-center justify-center gap-1.5 lg:flex xl:gap-2"
             >
               {primaryNavigation.map((item) => {
                 const active = isActive(item.href);
@@ -53,7 +53,7 @@ export function SiteHeader() {
                     key={item.href}
                     href={item.href}
                     className={clsx(
-                      "rounded-full px-3.5 py-2.5 text-[12px] font-medium whitespace-nowrap transition xl:px-4.5",
+                      "rounded-full px-4 py-2.5 text-[12px] font-medium whitespace-nowrap transition xl:px-4.5",
                       active
                         ? "accent-surface text-on-dark"
                         : "text-[var(--color-ink-soft)] hover:bg-white/70 hover:text-[var(--color-ink)]",
@@ -66,14 +66,12 @@ export function SiteHeader() {
             </nav>
 
             <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3 lg:ml-0 lg:justify-self-end">
-              <a
-                href={siteConfig.ownerPortalUrl}
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                href={siteConfig.ownerPortalPath}
                 className="hidden min-h-11 items-center rounded-full accent-surface px-5 text-[0.78rem] font-semibold uppercase tracking-[var(--tracking-ui)] text-on-dark transition hover:bg-[#3e4b3f] lg:inline-flex"
               >
                 Owner Portal
-              </a>
+              </Link>
               <button
                 ref={triggerRef}
                 type="button"

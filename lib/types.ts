@@ -79,6 +79,8 @@ export interface SiteConfig {
   url: string;
   ogImage: string;
   intro: string;
+  ownerPortalPath: string;
+  communityChatPath: string;
   locationLabel: string;
   googleMapsEmbedUrl: string;
   googleMapsUrl: string;

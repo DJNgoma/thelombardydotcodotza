@@ -51,14 +51,14 @@ export function NearbyAmenities({ compact = false }: NearbyAmenitiesProps) {
           />
 
           <div
-            className={`mt-10 grid gap-5 ${
+            className={`mt-10 grid gap-6 ${
               compact ? "xl:grid-cols-[0.92fr_1.08fr]" : "lg:grid-cols-[0.78fr_1.22fr]"
             }`}
           >
             {compact ? (
               <article className="soft-card surface-dark radius-feature overflow-hidden p-3">
                 <div className="grid gap-3 lg:grid-rows-[1.12fr_auto]">
-                  <div className="radius-panel relative min-h-[18rem] overflow-hidden lg:min-h-[24rem]">
+                  <div className="radius-panel relative min-h-[18rem] overflow-hidden lg:min-h-[21rem]">
                     <Image
                       src="/images/inspiration/courtyard-garden.jpg"
                       alt="Landscaped residential courtyard reference."
@@ -89,7 +89,7 @@ export function NearbyAmenities({ compact = false }: NearbyAmenitiesProps) {
 
             <div
               className={`grid gap-5 ${
-                compact ? "md:grid-cols-3 xl:gap-4" : "md:grid-cols-2 xl:grid-cols-3"
+                compact ? "md:grid-cols-2 2xl:grid-cols-3" : "md:grid-cols-2 xl:grid-cols-3"
               }`}
             >
               {groups.map((group) => (

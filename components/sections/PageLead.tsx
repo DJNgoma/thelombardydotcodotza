@@ -29,6 +29,12 @@ export function PageLead({
   highlights = [],
 }: PageLeadProps) {
   const hasDetailPanel = Boolean(detailTitle || detailBody);
+  const leadHeaderClass = hasDetailPanel
+    ? "grid gap-8 xl:grid-cols-[1fr_auto] xl:items-start"
+    : "grid gap-6";
+  const actionsClass = hasDetailPanel
+    ? "flex flex-col gap-3 sm:flex-row sm:flex-wrap xl:justify-end"
+    : "flex flex-col gap-3 sm:flex-row sm:flex-wrap";
 
   return (
     <section className="page-lead-space">
@@ -36,11 +42,11 @@ export function PageLead({
         <div
           className={clsx(
             "grid gap-5",
-            hasDetailPanel && "lg:grid-cols-[1.02fr_0.98fr]",
+            hasDetailPanel && "xl:grid-cols-[1.02fr_0.98fr]",
           )}
         >
           <div className="soft-card surface-feature radius-feature overflow-hidden px-6 py-7 sm:px-10 sm:py-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-start">
+            <div className={leadHeaderClass}>
               <div>
                 <p className="eyebrow">{eyebrow}</p>
                 <h1 className="display-title display-page balanced-text text-on-light mt-4 max-w-4xl font-semibold">
@@ -51,7 +57,7 @@ export function PageLead({
                 </p>
               </div>
               {actions.length ? (
-                <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
+                <div className={actionsClass}>
                   {actions.map((action) => (
                     <ButtonLink
                       key={action.href}

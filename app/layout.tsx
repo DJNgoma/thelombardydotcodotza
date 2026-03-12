@@ -1,11 +1,13 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Grand_Hotel, Manrope } from "next/font/google";
+import localFont from "next/font/local";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { StructuredData } from "@/components/layout/StructuredData";
 import { siteConfig } from "@/content/site";
+import { siteBuildId } from "@/lib/build";
 import { organizationSchema, websiteSchema } from "@/lib/structured-data";
 
 const manrope = Manrope({
@@ -19,10 +21,10 @@ const cormorant = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
 });
 
-const grandHotel = Grand_Hotel({
-  variable: "--font-grand-hotel",
-  subsets: ["latin"],
-  weight: "400",
+const lokiCola = localFont({
+  src: "./fonts/loki-cola.ttf",
+  variable: "--font-loki-cola",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -69,13 +71,20 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },
+  manifest: `/manifest.webmanifest?v=${siteBuildId}`,
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: `/favicon.ico?v=${siteBuildId}`, sizes: "any" },
+      { url: `/icon.svg?v=${siteBuildId}`, type: "image/svg+xml" },
     ],
-    shortcut: ["/favicon.ico"],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: [`/favicon.ico?v=${siteBuildId}`],
+    apple: [
+      {
+        url: `/apple-icon.png?v=${siteBuildId}`,
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
   },
 };
 
@@ -87,7 +96,7 @@ export default function RootLayout({
   return (
     <html lang="en-ZA">
       <body
-        className={`${manrope.variable} ${cormorant.variable} ${grandHotel.variable} antialiased`}
+        className={`${manrope.variable} ${cormorant.variable} ${lokiCola.variable} antialiased`}
       >
         <StructuredData data={[organizationSchema(), websiteSchema()]} />
         <div className="relative flex min-h-screen flex-col">

@@ -52,7 +52,7 @@ export default function ManagementPage() {
         title="Operational support and estate administration managed by Landsdowne."
         description="The Lombardy Lifestyle Estate’s operational management is handled by Landsdowne Property Group. Management supports maintenance coordination, resident queries, owner communication, and financial administration processes."
         actions={[
-          { href: siteConfig.ownerPortalUrl, label: "Owner portal" },
+          { href: siteConfig.ownerPortalPath, label: "Owner portal" },
           { href: "/levy-resources", label: "Levy information", variant: "secondary" },
         ]}
         highlights={[

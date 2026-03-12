@@ -33,14 +33,14 @@
   --radius-card: 1.7rem;
   --radius-panel: 2.05rem;
   --radius-feature: 2.45rem;
-  --content-max: 86rem;
+  --content-max: 92rem;
   --tracking-ui: 0.14em;
   --tracking-eyebrow: 0.18em;
-  --space-section: clamp(2.9rem, 5.6vw, 5.1rem);
-  --space-section-tight: clamp(2.1rem, 3.9vw, 3.25rem);
+  --space-section: clamp(3.1rem, 5.8vw, 5.9rem);
+  --space-section-tight: clamp(2.35rem, 4.2vw, 3.85rem);
   --space-page-lead-top: clamp(1rem, 2.2vw, 1.4rem);
-  --space-page-lead-bottom: clamp(2.55rem, 4.8vw, 4.1rem);
-  --space-hero-bottom: clamp(2.7rem, 4.9vw, 4.35rem);
+  --space-page-lead-bottom: clamp(2.8rem, 5vw, 4.7rem);
+  --space-hero-bottom: clamp(3rem, 5.2vw, 5rem);
   --header-offset-mobile: 5.8rem;
   --header-offset-desktop: 5.95rem;
 }
@@ -72,7 +72,7 @@ body {
     var(--color-canvas);
   color: var(--color-ink);
   font-family: var(--font-manrope), sans-serif;
-  line-height: 1.5;
+  line-height: 1.56;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
@@ -98,7 +98,7 @@ svg {
 
 .page-shell {
   margin-inline: auto;
-  width: min(100% - clamp(1rem, 3vw, 2rem), var(--content-max));
+  width: min(100% - clamp(1rem, 3vw, 2.75rem), var(--content-max));
 }
 
 .section-space {
@@ -219,10 +219,10 @@ svg {
 }
 
 .brand-wordmark {
-  font-family: var(--font-grand-hotel), cursive;
+  font-family: var(--font-loki-cola), var(--font-cormorant), serif;
   font-weight: 400;
-  letter-spacing: -0.005em;
-  line-height: 0.9;
+  letter-spacing: 0.005em;
+  line-height: 1.02;
 }
 
 .display-hero {
@@ -402,7 +402,7 @@ svg {
 
 .band-stack {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .band-support-card {

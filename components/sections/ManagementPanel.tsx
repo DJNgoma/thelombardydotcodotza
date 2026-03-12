@@ -8,7 +8,7 @@ export function ManagementPanel() {
     <section className="section-space">
       <div className="page-shell">
         <div className="soft-card surface-stone radius-feature px-6 py-7 sm:px-10 sm:py-10">
-          <div className="grid gap-8 xl:grid-cols-[0.9fr_1.1fr] xl:items-start">
+          <div className="grid gap-8 xl:grid-cols-[0.94fr_1.06fr] xl:items-start">
             <div>
               <div className="inset-surface radius-inset inline-flex px-4 py-3">
                 <Image
@@ -26,7 +26,7 @@ export function ManagementPanel() {
               />
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <ButtonLink href="/management">Management overview</ButtonLink>
-                <ButtonLink href={siteConfig.ownerPortalUrl} variant="secondary">
+                <ButtonLink href={siteConfig.ownerPortalPath} variant="secondary">
                   Owner portal
                 </ButtonLink>
               </div>
@@ -50,11 +50,11 @@ export function ManagementPanel() {
               </div>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2 2xl:grid-cols-3">
               {siteConfig.managementContacts.map((contact, index) => (
                 <article
                   key={contact.title}
-                  className={`radius-card flex min-h-[18rem] flex-col border p-5 ${
+                  className={`radius-card flex min-h-[16.5rem] flex-col border p-5 sm:p-6 ${
                     index === 0
                       ? "surface-dark border-white/8"
                       : index === 1
