@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { siteConfig } from "@/content/site";
 import type { NavItem } from "@/lib/types";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 interface MobileUtilityDrawerProps {
   open: boolean;
@@ -176,6 +177,15 @@ export function MobileUtilityDrawer({
               >
                 Owner Portal
               </Link>
+
+              <div className="rounded-[1.7rem] border border-white/10 bg-white/6 p-5">
+                <p className="meta-label text-on-dark-label">Theme</p>
+                <p className="mt-3 text-sm leading-6 text-on-dark-muted">
+                  Choose whether the site follows your device, stays light, or
+                  stays dark on this device.
+                </p>
+                <ThemeToggle className="mt-4 w-full" tone="overlay" />
+              </div>
 
               <div className="rounded-[1.7rem] border border-white/10 bg-white/6 p-5">
                 <p className="meta-label text-on-dark-label">Resident links</p>

@@ -13,9 +13,9 @@ export function Pill({ children, className, tone = "light" }: PillProps) {
       className={clsx(
         "meta-label inline-flex items-center rounded-full px-3.5 py-1.5",
         tone === "light" &&
-          "border border-[var(--color-line)] bg-white/72 text-[var(--color-sage-deep)]",
+          "control-surface border text-[var(--color-pill-light-fg)]",
         tone === "dark" &&
-          "border border-white/16 bg-white/8 text-on-dark-label",
+          "border border-[var(--color-pill-dark-border)] bg-[var(--color-pill-dark-bg)] text-on-dark-label",
         className,
       )}
     >

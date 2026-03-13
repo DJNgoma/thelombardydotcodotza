@@ -7,6 +7,7 @@ import clsx from "clsx";
 import { siteConfig } from "@/content/site";
 import { primaryNavigation, utilityNavigation } from "@/lib/navigation";
 import { MobileUtilityDrawer } from "@/components/layout/MobileUtilityDrawer";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -56,7 +57,7 @@ export function SiteHeader() {
                       "rounded-full px-4 py-2.5 text-[12px] font-medium whitespace-nowrap transition xl:px-4.5",
                       active
                         ? "accent-surface text-on-dark"
-                        : "text-[var(--color-ink-soft)] hover:bg-white/70 hover:text-[var(--color-ink)]",
+                        : "text-[var(--color-ink-soft)] hover:bg-[var(--color-control-bg)] hover:text-[var(--color-ink)]",
                     )}
                   >
                     {item.label}
@@ -66,6 +67,7 @@ export function SiteHeader() {
             </nav>
 
             <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3 lg:ml-0 lg:justify-self-end">
+              <ThemeToggle className="hidden lg:flex" />
               <Link
                 href={siteConfig.ownerPortalPath}
                 className="hidden min-h-11 items-center rounded-full accent-surface px-5 text-[0.78rem] font-semibold uppercase tracking-[var(--tracking-ui)] text-on-dark transition hover:bg-[#3e4b3f] lg:inline-flex"
@@ -83,7 +85,7 @@ export function SiteHeader() {
                   "inline-flex min-h-11 items-center gap-3 rounded-full border px-3.5 text-sm font-medium transition duration-200 sm:px-4 lg:hidden",
                   isOpen
                     ? "accent-surface border-transparent text-on-dark"
-                    : "border-[var(--color-line)] bg-white/72 text-[var(--color-ink)] hover:bg-white",
+                    : "control-surface control-surface-strong",
                 )}
               >
                 <span>Menu</span>

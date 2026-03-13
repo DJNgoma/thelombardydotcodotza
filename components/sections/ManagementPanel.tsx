@@ -96,7 +96,7 @@ export function ManagementPanel() {
                         className={`inline-flex min-h-11 items-center justify-center rounded-full border px-4 text-[0.74rem] font-semibold uppercase tracking-[var(--tracking-ui)] transition ${
                           index === 0
                             ? "border-white/14 bg-white/10 text-on-dark hover:bg-white/16 hover:text-white"
-                            : "border-[var(--color-line)] bg-white/86 text-[var(--color-ink)] hover:bg-white"
+                            : "control-surface control-surface-strong"
                         }`}
                         target={contact.actionHref.startsWith("http") ? "_blank" : undefined}
                         rel={contact.actionHref.startsWith("http") ? "noreferrer" : undefined}

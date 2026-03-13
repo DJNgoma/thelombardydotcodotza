@@ -20,7 +20,7 @@ function filterChipClass(active: boolean) {
     "inline-flex min-h-10 items-center rounded-full border px-4 text-[0.72rem] font-semibold uppercase tracking-[var(--tracking-ui)] transition duration-200",
     active
       ? "accent-surface border-transparent text-on-dark"
-      : "border-[var(--color-line)] bg-white/72 text-[var(--color-ink-soft)] hover:bg-white hover:text-[var(--color-ink)]",
+      : "control-surface control-surface-muted",
   );
 }
 
@@ -87,7 +87,7 @@ export function NoticeArchiveExplorer({
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 placeholder="Search notices, topics, or audience"
-                className="mt-3 w-full rounded-[1.2rem] border border-[var(--color-line)] bg-white/90 px-4 py-3 text-[0.95rem] text-[var(--color-ink)] transition placeholder:text-[var(--color-ink-soft)] focus:border-[rgba(70,84,70,0.34)] focus:bg-white focus:outline-none"
+                className="input-surface mt-3 w-full rounded-[1.2rem] px-4 py-3 text-[0.95rem] transition"
               />
               <div className="mt-3 flex flex-wrap items-center justify-between gap-3 text-sm text-[var(--color-ink-soft)]">
                 <span>

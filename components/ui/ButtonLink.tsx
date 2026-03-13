@@ -27,7 +27,7 @@ export function ButtonLink({
     variant === "primary" &&
       "accent-surface !text-white visited:!text-white hover:-translate-y-px hover:bg-[#3e4b3f] hover:!text-white focus-visible:!text-white active:!text-white",
     variant === "secondary" &&
-      "border-[var(--color-line)] bg-white/90 text-on-light hover:-translate-y-px hover:bg-white hover:text-[var(--color-on-light)]",
+      "control-surface control-surface-strong hover:-translate-y-px",
     variant === "ghost" &&
       "border-transparent px-0 text-on-light-muted hover:text-[var(--color-on-light)]",
     className,

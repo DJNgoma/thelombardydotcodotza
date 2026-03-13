@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
@@ -9,6 +9,7 @@ import { StructuredData } from "@/components/layout/StructuredData";
 import { siteConfig } from "@/content/site";
 import { siteBuildId } from "@/lib/build";
 import { organizationSchema, websiteSchema } from "@/lib/structured-data";
+import { createThemeBootstrapScript } from "@/lib/theme";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -88,16 +89,27 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  colorScheme: "light dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f3efe7" },
+    { media: "(prefers-color-scheme: dark)", color: "#101613" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: ReactNode;
 }>) {
   return (
-    <html lang="en-ZA">
+    <html lang="en-ZA" data-theme="light" suppressHydrationWarning>
       <body
         className={`${manrope.variable} ${cormorant.variable} ${lokiCola.variable} antialiased`}
       >
+        <script
+          dangerouslySetInnerHTML={{ __html: createThemeBootstrapScript() }}
+        />
         <StructuredData data={[organizationSchema(), websiteSchema()]} />
         <div className="relative flex min-h-screen flex-col">
           <SiteHeader />
