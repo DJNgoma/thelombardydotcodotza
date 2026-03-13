@@ -132,6 +132,7 @@ svg {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.92), var(--color-surface-card));
   box-shadow: var(--shadow-card);
+  -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   transition:
     transform 240ms ease,
@@ -392,8 +393,10 @@ svg {
   color: var(--color-ink);
 }
 
-.interactive-lift:hover {
-  transform: translateY(-2px);
+@media (hover: hover) and (pointer: fine) {
+  .interactive-lift:hover {
+    transform: translateY(-2px);
+  }
 }
 
 .sticky-page-aside {
@@ -428,6 +431,17 @@ a {
 
   .hero-space {
     padding-top: 0.5rem;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .soft-card {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .noise-overlay::before {
+    opacity: 0.12;
   }
 }
 

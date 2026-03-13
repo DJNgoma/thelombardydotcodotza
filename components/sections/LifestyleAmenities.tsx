@@ -46,80 +46,81 @@ export function LifestyleAmenities() {
             </div>
           </div>
 
-          <div className="grid gap-4">
-            <article className="soft-card surface-card radius-feature overflow-hidden p-3">
-              <div className="grid gap-4 lg:grid-cols-[minmax(0,1.04fr)_minmax(18rem,0.96fr)]">
-                <div className="radius-panel relative min-h-[20rem] overflow-hidden sm:min-h-[23rem] xl:min-h-[27rem]">
-                  <Image
-                    src="/images/estate/pool-from-newsletter.png"
-                    alt="Estate pool image sourced from the March 2026 newsletter."
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(20,27,23,0.24)] via-transparent to-transparent" />
-                  <div className="absolute inset-x-4 bottom-4 sm:inset-x-5 sm:bottom-5">
-                    <div className="soft-card surface-dark radius-panel px-5 py-5 sm:px-6">
-                      <p className="meta-label text-on-dark-label">
-                        Everyday resident amenity core
-                      </p>
-                      <p className="mt-3 text-sm leading-7 text-on-dark-muted sm:text-base">
-                        The clubhouse, pool, braai area, and gym work best as a single shared amenity mix rather than as oversized standalone features.
-                      </p>
-                    </div>
+          <article className="soft-card surface-card radius-feature overflow-hidden p-3">
+            <div className="grid gap-4 lg:grid-cols-[minmax(0,1.08fr)_minmax(18rem,0.92fr)]">
+              <div className="radius-panel relative min-h-[20rem] overflow-hidden sm:min-h-[23rem] xl:min-h-[27rem]">
+                <Image
+                  src="/images/estate/pool-from-newsletter.png"
+                  alt="Estate pool image sourced from the March 2026 newsletter."
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(20,27,23,0.24)] via-transparent to-transparent" />
+                <div className="absolute inset-x-4 bottom-4 sm:inset-x-5 sm:bottom-5">
+                  <div className="soft-card surface-dark radius-panel px-5 py-5 sm:px-6">
+                    <p className="meta-label text-on-dark-label">
+                      Everyday resident amenity core
+                    </p>
+                    <p className="mt-3 text-sm leading-7 text-on-dark-muted sm:text-base">
+                      The clubhouse, pool, braai area, and gym work best as a
+                      single shared amenity mix rather than as oversized
+                      standalone features.
+                    </p>
                   </div>
                 </div>
-
-                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-                  {amenities.map((amenity) => (
-                    <article
-                      key={amenity.title}
-                      className="surface-panel radius-card flex flex-col justify-between border border-[var(--color-line)] p-5"
-                    >
-                      <div>
-                        <p className="meta-label text-[var(--color-sage-deep)]">
-                          {amenity.title}
-                        </p>
-                        <p className="body-copy-sm mt-4">
-                          {amenity.summary}
-                        </p>
-                      </div>
-                      <p className="mt-5 text-sm leading-7 text-[var(--color-ink)]">
-                        {amenity.highlight}
-                      </p>
-                    </article>
-                  ))}
-                </div>
               </div>
+
+              <div className="grid gap-3 sm:grid-cols-2">
+                {amenities.map((amenity) => (
+                  <article
+                    key={amenity.title}
+                    className="surface-panel radius-card flex flex-col justify-between border border-[var(--color-line)] p-4 xl:p-5"
+                  >
+                    <div>
+                      <p className="meta-label text-[var(--color-sage-deep)]">
+                        {amenity.title}
+                      </p>
+                      <p className="body-copy-sm mt-3">{amenity.summary}</p>
+                    </div>
+                    <p className="mt-4 text-sm leading-7 text-[var(--color-ink)]">
+                      {amenity.highlight}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </article>
+
+          <div className="grid gap-4 md:grid-cols-3 xl:col-span-2">
+            <article className="inset-surface radius-card px-5 py-5">
+              <p className="meta-label text-[var(--color-sage-deep)]">
+                Resident-first use
+              </p>
+              <p className="mt-3 text-sm leading-7 text-[var(--color-ink-soft)]">
+                Shared facilities remain practical daily amenities rather than
+                separate destination zones competing for attention on desktop.
+              </p>
             </article>
 
-            <div className="grid gap-4 md:grid-cols-3">
-              <article className="inset-surface radius-card px-5 py-5">
-                <p className="meta-label text-[var(--color-sage-deep)]">
-                  Resident-first use
-                </p>
-                <p className="mt-3 text-sm leading-7 text-[var(--color-ink-soft)]">
-                  Shared facilities remain practical daily amenities rather than separate destination zones competing for attention on desktop.
-                </p>
-              </article>
+            <article className="inset-surface radius-card px-5 py-5">
+              <p className="meta-label text-[var(--color-sage-deep)]">
+                Booking rhythm
+              </p>
+              <p className="mt-3 text-sm leading-7 text-[var(--color-ink-soft)]">
+                Functions, clubhouse use, and braai activity still sit inside a
+                managed booking flow that protects neighbouring residents.
+              </p>
+            </article>
 
-              <article className="inset-surface radius-card px-5 py-5">
-                <p className="meta-label text-[var(--color-sage-deep)]">
-                  Booking rhythm
-                </p>
-                <p className="mt-3 text-sm leading-7 text-[var(--color-ink-soft)]">
-                  Functions, clubhouse use, and braai activity still sit inside a managed booking flow that protects neighbouring residents.
-                </p>
-              </article>
-
-              <article className="inset-surface radius-card px-5 py-5">
-                <p className="meta-label text-[var(--color-sage-deep)]">
-                  Routine upkeep
-                </p>
-                <p className="mt-3 text-sm leading-7 text-[var(--color-ink-soft)]">
-                  Pool maintenance, cleaning, and gym servicing remain part of the estate’s normal operating standard.
-                </p>
-              </article>
-            </div>
+            <article className="inset-surface radius-card px-5 py-5">
+              <p className="meta-label text-[var(--color-sage-deep)]">
+                Routine upkeep
+              </p>
+              <p className="mt-3 text-sm leading-7 text-[var(--color-ink-soft)]">
+                Pool maintenance, cleaning, and gym servicing remain part of the
+                estate&apos;s normal operating standard.
+              </p>
+            </article>
           </div>
         </div>
       </div>

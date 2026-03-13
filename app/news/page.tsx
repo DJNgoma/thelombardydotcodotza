@@ -3,7 +3,7 @@ import path from "node:path";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { StructuredData } from "@/components/layout/StructuredData";
-import { NoticeCardGrid } from "@/components/sections/NoticeCardGrid";
+import { NoticeArchiveExplorer } from "@/components/sections/NoticeArchiveExplorer";
 import { PageLead } from "@/components/sections/PageLead";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SoftCard } from "@/components/ui/SoftCard";
@@ -95,12 +95,7 @@ export default async function NewsPage() {
         </div>
       </section>
 
-      <NoticeCardGrid
-        notices={notices}
-        eyebrow="Notice archive"
-        title="All current notices"
-        description="Each notice is published as its own update so owners and residents can find estate information quickly."
-      />
+      <NoticeArchiveExplorer notices={notices} />
     </>
   );
 }

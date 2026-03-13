@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import Image from "next/image";
 import { siteConfig } from "@/content/site";
 import { ButtonLink } from "@/components/ui/ButtonLink";
@@ -50,17 +51,16 @@ export function ManagementPanel() {
               </div>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2 2xl:grid-cols-4">
+            <div className="grid gap-4 md:grid-cols-2">
               {siteConfig.managementContacts.map((contact, index) => (
                 <article
                   key={contact.title}
-                  className={`radius-card flex min-h-[16.5rem] flex-col border p-5 sm:p-6 ${
-                    index === 0
-                      ? "surface-dark border-white/8"
-                      : index === 1
-                        ? "surface-panel border-[var(--color-line)]"
-                        : "inset-surface border-[var(--color-line)]"
-                  }`}
+                  className={clsx(
+                    "radius-card flex min-h-[14.75rem] flex-col border p-5 sm:p-6",
+                    index === 0 && "surface-dark border-white/8 md:col-span-2",
+                    index === 1 && "surface-panel border-[var(--color-line)]",
+                    index > 1 && "inset-surface border-[var(--color-line)]",
+                  )}
                 >
                   <p
                     className={`meta-label ${
@@ -76,7 +76,7 @@ export function ManagementPanel() {
                           : "Escalation path"}
                   </p>
                   <h3
-                    className={`mt-4 text-[1.85rem] leading-[1.08] font-medium ${
+                    className={`display-title balanced-text mt-4 max-w-[11ch] text-[1.65rem] leading-[1.04] font-medium sm:text-[1.9rem] ${
                       index === 0 ? "text-on-dark" : "text-[var(--color-ink)]"
                     }`}
                   >

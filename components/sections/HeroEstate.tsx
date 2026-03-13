@@ -48,7 +48,7 @@ export function HeroEstate({ featuredNotice }: HeroEstateProps) {
     <section className="hero-space">
       <div className="page-shell">
         <div className="grid gap-6 xl:grid-cols-[minmax(0,1.08fr)_minmax(30rem,0.92fr)] xl:items-start">
-          <article className="order-2 soft-card surface-feature radius-feature overflow-hidden p-3 xl:order-1 xl:self-start">
+          <article className="soft-card surface-feature radius-feature overflow-hidden p-3 xl:self-start">
             <div className="radius-panel relative min-h-[23rem] overflow-hidden sm:min-h-[30rem] xl:min-h-[35rem] 2xl:min-h-[38rem]">
               <Image
                 src="/images/estate/estate-aerial-clean.jpg"
@@ -78,45 +78,45 @@ export function HeroEstate({ featuredNotice }: HeroEstateProps) {
             </div>
           </article>
 
-          <div className="order-1 grid gap-5 xl:order-2">
-            <div className="soft-card surface-stone noise-overlay radius-feature relative overflow-hidden px-6 py-7 sm:px-10 sm:py-10 xl:px-9 xl:py-8 2xl:px-10 2xl:py-9">
-              <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-br from-[rgba(169,190,170,0.16)] via-transparent to-transparent" />
-              <div className="absolute -right-14 bottom-10 h-44 w-44 rounded-full bg-[rgba(118,136,116,0.08)] blur-3xl" />
-              <div className="relative z-10">
-                <Pill>Secure, managed, residential</Pill>
-                <h1 className="display-title display-hero balanced-text text-on-light mt-5 max-w-[10ch] font-semibold sm:mt-6 xl:max-w-[10.5ch] xl:text-[3.25rem] xl:leading-[0.92] 2xl:text-[3.8rem]">
-                  Estate living shaped by calm, order, and belonging.
-                </h1>
-                <p className="body-copy-lg text-on-light-muted mt-5 max-w-[32rem] xl:text-[1rem]">
-                  The Lombardy Lifestyle Estate offers secure, modern residential
-                  living within a managed community environment.
-                </p>
+          <div className="soft-card surface-stone noise-overlay radius-feature relative overflow-hidden px-6 py-7 sm:px-10 sm:py-10 xl:px-9 xl:py-8 2xl:px-10 2xl:py-9">
+            <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-br from-[rgba(169,190,170,0.16)] via-transparent to-transparent" />
+            <div className="absolute -right-14 bottom-10 h-44 w-44 rounded-full bg-[rgba(118,136,116,0.08)] blur-3xl" />
+            <div className="relative z-10">
+              <Pill>Secure, managed, residential</Pill>
+              <h1 className="display-title balanced-text mt-5 max-w-[11ch] text-[clamp(2.9rem,5vw,4.9rem)] leading-[0.95] font-semibold text-on-light sm:mt-6 xl:max-w-[11.25ch]">
+                Estate living shaped by calm, order, and belonging.
+              </h1>
+              <p className="body-copy-lg text-on-light-muted mt-5 max-w-[32rem] xl:text-[1rem]">
+                The Lombardy Lifestyle Estate offers secure, modern residential
+                living within a managed community environment.
+              </p>
 
-                <div className="mt-7 flex flex-col gap-3 sm:flex-row xl:mt-8">
-                  <ButtonLink href="/news">View latest notices</ButtonLink>
-                  <ButtonLink href="/about" variant="secondary">
-                    Explore the estate
-                  </ButtonLink>
-                </div>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row xl:mt-8">
+                <ButtonLink href="/news">View latest notices</ButtonLink>
+                <ButtonLink href="/about" variant="secondary">
+                  Explore the estate
+                </ButtonLink>
               </div>
-
-              <dl className="relative z-10 mt-8 divide-y divide-[var(--color-line)] border-y border-[var(--color-line)] xl:mt-10">
-                {heroFacts.map((fact) => (
-                  <div
-                    key={fact.title}
-                    className="grid gap-2 py-4 sm:grid-cols-[10rem_1fr] sm:gap-4"
-                  >
-                    <dt className="meta-label text-[var(--color-sage-deep)]">
-                      {fact.title}
-                    </dt>
-                    <dd className="text-sm leading-7 text-[var(--color-ink-soft)]">
-                      {fact.summary}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
             </div>
 
+            <dl className="relative z-10 mt-8 divide-y divide-[var(--color-line)] border-y border-[var(--color-line)] xl:mt-10">
+              {heroFacts.map((fact) => (
+                <div
+                  key={fact.title}
+                  className="grid gap-2 py-4 sm:grid-cols-[10rem_1fr] sm:gap-4"
+                >
+                  <dt className="meta-label text-[var(--color-sage-deep)]">
+                    {fact.title}
+                  </dt>
+                  <dd className="text-sm leading-7 text-[var(--color-ink-soft)]">
+                    {fact.summary}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <div className="grid gap-5 xl:col-span-2 xl:grid-cols-[minmax(0,1fr)_minmax(22rem,0.78fr)]">
             <div className="grid gap-4 sm:grid-cols-2">
               {supportingVisuals.map((visual) => (
                 <article
@@ -148,7 +148,7 @@ export function HeroEstate({ featuredNotice }: HeroEstateProps) {
 
             {featuredNotice ? (
               <article className="soft-card surface-dark radius-feature px-6 py-6 sm:px-7">
-                <div className="grid gap-5 xl:grid-cols-[minmax(0,9.5rem)_1fr] xl:gap-7">
+                <div className="grid gap-5 lg:grid-cols-[minmax(0,9.5rem)_1fr] lg:gap-7">
                   <div className="flex flex-col gap-4">
                     <Pill tone="dark">Highlighted notice</Pill>
                     <div className="space-y-2">
