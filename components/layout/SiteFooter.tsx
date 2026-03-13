@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { siteConfig } from "@/content/site";
 import { primaryNavigation, utilityNavigation } from "@/lib/navigation";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function SiteFooter() {
   return (
@@ -76,6 +77,19 @@ export function SiteFooter() {
                   Owner notice support
                 </Link>
               </div>
+            </div>
+          </div>
+
+          <div className="mt-8 rounded-[1.7rem] border border-white/10 bg-white/6 p-5 sm:p-6">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-xl">
+                <p className="meta-label text-on-dark-label">Appearance</p>
+                <p className="mt-3 text-sm leading-6 text-on-dark-muted">
+                  Theme follows your device by default. Change it here only if
+                  you want to keep this browser in light or dark mode.
+                </p>
+              </div>
+              <ThemeToggle tone="overlay" />
             </div>
           </div>
 

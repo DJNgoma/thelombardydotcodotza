@@ -103,7 +103,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en-ZA" data-theme="light" suppressHydrationWarning>
+    <html lang="en-ZA" data-theme="system" suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{ __html: createThemeBootstrapScript() }}

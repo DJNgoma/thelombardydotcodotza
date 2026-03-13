@@ -179,15 +179,6 @@ export function MobileUtilityDrawer({
               </Link>
 
               <div className="rounded-[1.7rem] border border-white/10 bg-white/6 p-5">
-                <p className="meta-label text-on-dark-label">Theme</p>
-                <p className="mt-3 text-sm leading-6 text-on-dark-muted">
-                  Choose whether the site follows your device, stays light, or
-                  stays dark on this device.
-                </p>
-                <ThemeToggle className="mt-4 w-full" tone="overlay" />
-              </div>
-
-              <div className="rounded-[1.7rem] border border-white/10 bg-white/6 p-5">
                 <p className="meta-label text-on-dark-label">Resident links</p>
                 <div className="mt-4 space-y-3">
                   {residentLinks.map((item) =>
@@ -244,6 +235,15 @@ export function MobileUtilityDrawer({
                     {siteConfig.trusteeContactEmail}
                   </a>
                 </div>
+              </div>
+
+              <div className="rounded-[1.7rem] border border-white/10 bg-white/6 p-5">
+                <p className="meta-label text-on-dark-label">Appearance</p>
+                <p className="mt-3 text-sm leading-6 text-on-dark-muted">
+                  Theme follows your device by default. Change it only if you
+                  want this browser to stay light or dark.
+                </p>
+                <ThemeToggle className="mt-4 w-full" tone="overlay" />
               </div>
 
               <div className="overflow-hidden rounded-[1.7rem] border border-white/10 bg-white/6">

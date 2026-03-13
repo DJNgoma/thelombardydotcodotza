@@ -149,6 +149,75 @@ html[data-theme="dark"] {
   --shadow-dark: 0 34px 86px rgba(0, 0, 0, 0.42);
 }
 
+@media (prefers-color-scheme: dark) {
+  html[data-theme="system"] {
+    --color-canvas: #101613;
+    --color-body-top: rgba(21, 28, 24, 0.98);
+    --color-body-bottom: rgba(13, 18, 16, 0.99);
+    --color-body-accent-a: rgba(126, 146, 120, 0.17);
+    --color-body-accent-b: rgba(168, 148, 104, 0.11);
+    --color-surface-card-top: rgba(31, 39, 35, 0.96);
+    --color-surface-card: rgba(24, 31, 28, 0.92);
+    --color-surface-panel-top: rgba(35, 44, 39, 0.97);
+    --color-surface-panel: rgba(28, 35, 32, 0.94);
+    --color-surface-feature-top: rgba(39, 49, 43, 0.98);
+    --color-surface-feature: rgba(31, 40, 35, 0.96);
+    --color-surface-stone-top: rgba(48, 45, 39, 0.96);
+    --color-surface-stone: rgba(38, 36, 31, 0.94);
+    --color-surface-stone-deep: rgba(31, 29, 25, 0.98);
+    --color-surface-dark-glow: rgba(142, 166, 136, 0.12);
+    --color-surface-dark: rgba(42, 52, 45, 0.98);
+    --color-surface-dark-deep: rgba(19, 24, 21, 0.99);
+    --color-stone: #b2a796;
+    --color-stone-deep: #8f8475;
+    --color-sage: #9fb696;
+    --color-sage-deep: #7d9474;
+    --color-charcoal: #eff4ec;
+    --color-ink: #edf2ea;
+    --color-ink-soft: rgba(216, 224, 214, 0.8);
+    --color-line: rgba(223, 231, 221, 0.12);
+    --color-line-strong: rgba(223, 231, 221, 0.18);
+    --color-on-light: #f4f8f2;
+    --color-on-light-muted: rgba(223, 231, 221, 0.8);
+    --color-on-dark: #fbf8f2;
+    --color-on-dark-muted: rgba(251, 248, 242, 0.84);
+    --color-on-dark-label: rgba(251, 248, 242, 0.68);
+    --color-inset-bg: rgba(255, 255, 255, 0.04);
+    --color-inset-highlight: rgba(255, 255, 255, 0.06);
+    --color-control-border: rgba(223, 231, 221, 0.14);
+    --color-control-bg: rgba(255, 255, 255, 0.06);
+    --color-control-hover-bg: rgba(255, 255, 255, 0.11);
+    --color-control-highlight: rgba(255, 255, 255, 0.08);
+    --color-control-fg: var(--color-on-dark);
+    --color-control-muted: var(--color-on-light-muted);
+    --color-pill-light-fg: #b4c6ab;
+    --color-pill-dark-bg: rgba(255, 255, 255, 0.08);
+    --color-pill-dark-border: rgba(255, 255, 255, 0.12);
+    --color-input-bg: rgba(255, 255, 255, 0.04);
+    --color-input-focus-bg: rgba(255, 255, 255, 0.08);
+    --color-input-placeholder: rgba(223, 231, 221, 0.52);
+    --color-input-border-focus: rgba(159, 182, 152, 0.34);
+    --color-theme-track: rgba(255, 255, 255, 0.05);
+    --color-theme-track-border: rgba(223, 231, 221, 0.14);
+    --color-theme-hover-bg: rgba(255, 255, 255, 0.08);
+    --color-theme-active-bg: var(--color-sage-deep);
+    --color-theme-active-fg: var(--color-on-dark);
+    --color-theme-inactive-fg: var(--color-on-light-muted);
+    --color-rule-center: rgba(223, 231, 221, 0.16);
+    --color-noise-grid: rgba(255, 255, 255, 0.03);
+    --color-band-support-border: rgba(255, 255, 255, 0.08);
+    --color-band-support-bg: rgba(255, 255, 255, 0.04);
+    --color-band-support-highlight: rgba(255, 255, 255, 0.06);
+    --color-selection: rgba(159, 182, 152, 0.22);
+    --color-focus: rgba(159, 182, 152, 0.42);
+    --shadow-card: 0 16px 36px rgba(0, 0, 0, 0.28);
+    --shadow-panel: 0 22px 50px rgba(0, 0, 0, 0.3);
+    --shadow-feature: 0 30px 76px rgba(0, 0, 0, 0.34);
+    --shadow-stone: 0 24px 58px rgba(0, 0, 0, 0.28);
+    --shadow-dark: 0 34px 86px rgba(0, 0, 0, 0.42);
+  }
+}
+
 @theme inline {
   --color-background: var(--color-canvas);
   --color-foreground: var(--color-ink);
@@ -169,6 +238,16 @@ html {
 
 html[data-theme="dark"] {
   color-scheme: dark;
+}
+
+html[data-theme="system"] {
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-theme="system"] {
+    color-scheme: dark;
+  }
 }
 
 body {

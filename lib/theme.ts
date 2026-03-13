@@ -43,21 +43,7 @@ export function createThemeBootstrapScript() {
           preference = stored;
         }
       } catch {}
-
-      var systemPrefersDark = false;
-
-      try {
-        systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      } catch {}
-
-      var resolved =
-        preference === "system"
-          ? systemPrefersDark
-            ? "dark"
-            : "light"
-          : preference;
-
-      doc.setAttribute(attribute, resolved);
+      doc.setAttribute(attribute, preference);
     })();
   `;
 }

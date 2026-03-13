@@ -91,7 +91,7 @@ function applyThemePreference(preference: ThemePreference): ThemeState {
   ).matches;
   const resolvedTheme = resolveThemePreference(preference, systemPrefersDark);
 
-  document.documentElement.setAttribute(THEME_ATTRIBUTE, resolvedTheme);
+  document.documentElement.setAttribute(THEME_ATTRIBUTE, preference);
 
   try {
     window.localStorage.setItem(THEME_STORAGE_KEY, preference);
