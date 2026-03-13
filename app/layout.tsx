@@ -104,12 +104,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-ZA" data-theme="light" suppressHydrationWarning>
-      <body
-        className={`${manrope.variable} ${cormorant.variable} ${lokiCola.variable} antialiased`}
-      >
+      <head>
         <script
           dangerouslySetInnerHTML={{ __html: createThemeBootstrapScript() }}
         />
+      </head>
+      <body
+        className={`${manrope.variable} ${cormorant.variable} ${lokiCola.variable} antialiased`}
+      >
         <StructuredData data={[organizationSchema(), websiteSchema()]} />
         <div className="relative flex min-h-screen flex-col">
           <SiteHeader />

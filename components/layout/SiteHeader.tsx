@@ -67,7 +67,9 @@ export function SiteHeader() {
             </nav>
 
             <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3 lg:ml-0 lg:justify-self-end">
-              <ThemeToggle className="hidden lg:flex" />
+              <div className="hidden lg:block">
+                <ThemeToggle />
+              </div>
               <Link
                 href={siteConfig.ownerPortalPath}
                 className="hidden min-h-11 items-center rounded-full accent-surface px-5 text-[0.78rem] font-semibold uppercase tracking-[var(--tracking-ui)] text-on-dark transition hover:bg-[#3e4b3f] lg:inline-flex"
