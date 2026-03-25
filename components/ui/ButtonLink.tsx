@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import Link from "next/link";
 import clsx from "clsx";
 
 interface ButtonLinkProps {
@@ -44,8 +43,8 @@ export function ButtonLink({
   }
 
   return (
-    <Link href={href} className={classes}>
+    <a href={href} className={classes}>
       {children}
-    </Link>
+    </a>
   );
 }

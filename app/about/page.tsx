@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { PageLead } from "@/components/sections/PageLead";
 import { SoftCard } from "@/components/ui/SoftCard";
+import { StaticImage } from "@/components/ui/StaticImage";
 import { buildPageMetadata } from "@/lib/metadata";
+import { estateCourtyardImage } from "@/lib/image-assets";
 import { breadcrumbSchema } from "@/lib/structured-data";
 import { StructuredData } from "@/components/layout/StructuredData";
 
@@ -72,11 +73,12 @@ export default function AboutPage() {
           <SoftCard className="overflow-hidden p-3" tone="stone" padding="md">
             <div className="grid gap-3 lg:grid-cols-[1.04fr_0.96fr]">
               <div className="radius-panel relative min-h-[27rem] overflow-hidden lg:min-h-[33rem]">
-                <Image
-                  src="/images/estate/estate-courtyard-clean.jpg"
+                <StaticImage
+                  {...estateCourtyardImage}
                   alt="Residential courtyard and building frontage at The Lombardy Lifestyle Estate."
-                  fill
-                  className="object-cover"
+                  pictureClassName="absolute inset-0"
+                  sizes="(max-width: 1279px) 100vw, 44vw"
+                  className="h-full w-full object-cover"
                 />
               </div>
               <div className="grid gap-3">

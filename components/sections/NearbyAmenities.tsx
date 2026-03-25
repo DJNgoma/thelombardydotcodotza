@@ -1,6 +1,7 @@
-import Image from "next/image";
 import { nearbyAmenities } from "@/content/nearby";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { courtyardGardenImage } from "@/lib/image-assets";
+import { StaticImage } from "@/components/ui/StaticImage";
 
 interface NearbyAmenitiesProps {
   compact?: boolean;
@@ -51,20 +52,18 @@ export function NearbyAmenities({ compact = false }: NearbyAmenitiesProps) {
           />
 
           <div
-            className={`mt-10 grid gap-6 ${
-              compact ? "xl:grid-cols-[0.92fr_1.08fr]" : "lg:grid-cols-[0.78fr_1.22fr]"
-            }`}
+            className={`mt-10 ${compact ? "grid gap-6 xl:grid-cols-[0.92fr_1.08fr]" : ""}`}
           >
             {compact ? (
               <article className="soft-card surface-dark radius-feature overflow-hidden p-3">
                 <div className="grid gap-3 lg:grid-rows-[1.12fr_auto]">
                   <div className="radius-panel relative min-h-[18rem] overflow-hidden lg:min-h-[21rem]">
-                    <Image
-                      src="/images/inspiration/courtyard-garden.jpg"
+                    <StaticImage
+                      {...courtyardGardenImage}
                       alt="Landscaped residential courtyard reference."
-                      fill
+                      pictureClassName="absolute inset-0"
                       sizes="(max-width: 1279px) 100vw, 38vw"
-                      className="object-cover"
+                      className="h-full w-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[rgba(18,24,20,0.34)] via-transparent to-transparent" />
                   </div>

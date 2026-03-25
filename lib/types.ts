@@ -1,3 +1,5 @@
+import type { ResponsiveImageAsset } from "@/lib/image-assets";
+
 export type NoticeCategory =
   | "Community"
   | "Governance"
@@ -46,7 +48,7 @@ export interface SocialPost {
   id: string;
   title: string;
   summary: string;
-  image: string;
+  image: ResponsiveImageAsset;
 }
 
 export type NearbyAmenityCategory =

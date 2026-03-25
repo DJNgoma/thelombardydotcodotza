@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Pill } from "@/components/ui/Pill";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { formatDisplayDate } from "@/lib/date";
@@ -56,12 +55,9 @@ export function NoticeCardGrid({
                 <p className="body-copy mt-5 max-w-2xl">
                   {primaryNotice.summary}
                 </p>
-                <Link
-                  href={`/news/${primaryNotice.slug}`}
-                  className="text-link mt-7"
-                >
+                <a href={`/news/${primaryNotice.slug}`} className="text-link mt-7">
                   {primaryNotice.ctaLabel}
-                </Link>
+                </a>
               </article>
 
               <div className="grid gap-5">
@@ -82,12 +78,12 @@ export function NoticeCardGrid({
                     <p className="body-copy-sm mt-4 flex-1">
                       {notice.summary}
                     </p>
-                    <Link
+                    <a
                       href={`/news/${notice.slug}`}
                       className="text-link mt-6 group-hover:text-[var(--color-ink)]"
                     >
                       {notice.ctaLabel}
-                    </Link>
+                    </a>
                   </article>
                 ))}
               </div>
@@ -111,12 +107,12 @@ export function NoticeCardGrid({
                   <p className="body-copy-sm mt-4 flex-1">
                     {notice.summary}
                   </p>
-                  <Link
+                  <a
                     href={`/news/${notice.slug}`}
                     className="text-link mt-6 group-hover:text-[var(--color-ink)]"
                   >
                     {notice.ctaLabel}
-                  </Link>
+                  </a>
                 </article>
               ))}
             </div>

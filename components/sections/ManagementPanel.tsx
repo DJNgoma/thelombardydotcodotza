@@ -1,8 +1,8 @@
 import clsx from "clsx";
-import Image from "next/image";
 import { siteConfig } from "@/content/site";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { StaticImage } from "@/components/ui/StaticImage";
 
 export function ManagementPanel() {
   return (
@@ -12,7 +12,7 @@ export function ManagementPanel() {
           <div className="grid gap-8 xl:grid-cols-[0.94fr_1.06fr] xl:items-start">
             <div>
               <div className="inset-surface radius-inset inline-flex px-4 py-3">
-                <Image
+                <StaticImage
                   src="/images/brands/landsdowne-logo.png"
                   alt="Landsdowne Property Group"
                   width={138}

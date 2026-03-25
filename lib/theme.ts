@@ -35,15 +35,108 @@ export function createThemeBootstrapScript() {
       var storageKey = ${JSON.stringify(THEME_STORAGE_KEY)};
       var attribute = ${JSON.stringify(THEME_ATTRIBUTE)};
       var doc = document.documentElement;
-      var preference = "system";
+      var media = window.matchMedia("(prefers-color-scheme: dark)");
 
-      try {
-        var stored = window.localStorage.getItem(storageKey);
-        if (stored === "light" || stored === "dark" || stored === "system") {
-          preference = stored;
+      function isPreference(value) {
+        return value === "light" || value === "dark" || value === "system";
+      }
+
+      function getPreference() {
+        var preference = "system";
+
+        try {
+          var stored = window.localStorage.getItem(storageKey);
+          if (isPreference(stored)) {
+            preference = stored;
+          }
+        } catch {}
+
+        return preference;
+      }
+
+      function resolveTheme(preference) {
+        if (preference === "system") {
+          return media.matches ? "dark" : "light";
         }
-      } catch {}
-      doc.setAttribute(attribute, preference);
+
+        return preference;
+      }
+
+      function syncToggles(preference) {
+        var toggles = document.querySelectorAll("[data-theme-toggle]");
+
+        for (var i = 0; i < toggles.length; i += 1) {
+          var toggle = toggles[i];
+          var buttons = toggle.querySelectorAll("[data-theme-option]");
+          for (var j = 0; j < buttons.length; j += 1) {
+            var button = buttons[j];
+            var active = button.getAttribute("data-theme-option") === preference;
+            button.setAttribute("data-active", active ? "true" : "false");
+            button.setAttribute("aria-pressed", active ? "true" : "false");
+          }
+        }
+      }
+
+      function applyPreference(preference) {
+        if (!isPreference(preference)) {
+          return;
+        }
+
+        doc.setAttribute(attribute, preference);
+
+        try {
+          window.localStorage.setItem(storageKey, preference);
+        } catch {}
+
+        syncToggles(preference);
+      }
+
+      function syncPreference() {
+        var preference = getPreference();
+        doc.setAttribute(attribute, preference);
+        syncToggles(preference);
+      }
+
+      doc.setAttribute(attribute, getPreference());
+
+      document.addEventListener("click", function (event) {
+        var target =
+          event.target instanceof Element
+            ? event.target.closest("[data-theme-option]")
+            : null;
+
+        if (!target) {
+          return;
+        }
+
+        applyPreference(target.getAttribute("data-theme-option"));
+      });
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", syncPreference, {
+          once: true,
+        });
+      } else {
+        syncPreference();
+      }
+
+      window.addEventListener("storage", function (event) {
+        if (event.key === storageKey) {
+          syncPreference();
+        }
+      });
+
+      var handleSystemThemeChange = function () {
+        if (getPreference() === "system") {
+          syncPreference();
+        }
+      };
+
+      if (media.addEventListener) {
+        media.addEventListener("change", handleSystemThemeChange);
+      } else if (media.addListener) {
+        media.addListener(handleSystemThemeChange);
+      }
     })();
   `;
 }

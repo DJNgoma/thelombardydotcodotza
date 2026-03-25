@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useDeferredValue, useState } from "react";
 import clsx from "clsx";
 import { Pill } from "@/components/ui/Pill";
@@ -205,12 +204,12 @@ export function NoticeArchiveExplorer({
                     ))}
                   </div>
 
-                  <Link
+                  <a
                     href={`/news/${notice.slug}`}
                     className="text-link mt-6 group-hover:text-[var(--color-ink)]"
                   >
                     {notice.ctaLabel}
-                  </Link>
+                  </a>
                 </article>
               ))}
             </div>

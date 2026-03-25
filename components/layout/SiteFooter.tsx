@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { siteConfig } from "@/content/site";
 import { primaryNavigation, utilityNavigation } from "@/lib/navigation";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
@@ -27,13 +26,13 @@ export function SiteFooter() {
               </p>
               <div className="mt-4 space-y-3">
                 {primaryNavigation.map((item) => (
-                  <Link
+                  <a
                     key={item.href}
                     href={item.href}
                     className="block text-sm text-on-dark-muted transition hover:text-white"
                   >
                     {item.label}
-                  </Link>
+                  </a>
                 ))}
               </div>
             </div>
@@ -55,27 +54,21 @@ export function SiteFooter() {
                     {item.label}
                   </a>
                   ) : (
-                  <Link
+                  <a
                     key={item.href}
                     href={item.href}
                     className="block transition hover:text-white"
                   >
                     {item.label}
-                  </Link>
+                  </a>
                   )
                 ))}
-                <Link
-                  href="/management"
-                  className="block transition hover:text-white"
-                >
+                <a href="/management" className="block transition hover:text-white">
                   Management overview
-                </Link>
-                <Link
-                  href="/notices-login"
-                  className="block transition hover:text-white"
-                >
+                </a>
+                <a href="/notices-login" className="block transition hover:text-white">
                   Owner notice support
-                </Link>
+                </a>
               </div>
             </div>
           </div>

@@ -1,7 +1,5 @@
 import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
@@ -10,23 +8,6 @@ import { siteConfig } from "@/content/site";
 import { siteBuildId } from "@/lib/build";
 import { organizationSchema, websiteSchema } from "@/lib/structured-data";
 import { createThemeBootstrapScript } from "@/lib/theme";
-
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
-});
-
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const lokiCola = localFont({
-  src: "./fonts/loki-cola.ttf",
-  variable: "--font-loki-cola",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -106,12 +87,11 @@ export default function RootLayout({
     <html lang="en-ZA" data-theme="system" suppressHydrationWarning>
       <head>
         <script
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: createThemeBootstrapScript() }}
         />
       </head>
-      <body
-        className={`${manrope.variable} ${cormorant.variable} ${lokiCola.variable} antialiased`}
-      >
+      <body className="antialiased">
         <StructuredData data={[organizationSchema(), websiteSchema()]} />
         <div className="relative flex min-h-screen flex-col">
           <SiteHeader />
