@@ -77,6 +77,7 @@ export default function AboutPage() {
                   {...estateCourtyardImage}
                   alt="Residential courtyard and building frontage at The Lombardy Lifestyle Estate."
                   pictureClassName="absolute inset-0"
+                  priority
                   sizes="(max-width: 1279px) 100vw, 44vw"
                   className="h-full w-full object-cover"
                 />
