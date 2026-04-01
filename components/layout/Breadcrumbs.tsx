@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 interface BreadcrumbItem {
   label: string;
   href?: string;
@@ -18,9 +16,9 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
           return (
             <li key={`${item.label}-${index}`} className="flex items-center gap-2">
               {item.href && !isLast ? (
-                <Link href={item.href} className="transition hover:text-[var(--color-ink)]">
+                <a href={item.href} className="transition hover:text-[var(--color-ink)]">
                   {item.label}
-                </Link>
+                </a>
               ) : (
                 <span className="text-[var(--color-ink)]">{item.label}</span>
               )}

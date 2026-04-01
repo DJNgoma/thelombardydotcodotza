@@ -1,13 +1,19 @@
-import Image from "next/image";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Pill } from "@/components/ui/Pill";
+import { StaticImage } from "@/components/ui/StaticImage";
 import { formatDisplayDate } from "@/lib/date";
+import {
+  estateAerialImage,
+  estateCourtyardImage,
+  poolNewsletterImage,
+} from "@/lib/image-assets";
+import type { ResponsiveImageAsset } from "@/lib/image-assets";
 import type { NoticeMeta } from "@/lib/types";
 
 interface SupportingVisual {
   title: string;
   summary: string;
-  src: string;
+  image: ResponsiveImageAsset;
   alt: string;
 }
 
@@ -16,14 +22,14 @@ const supportingVisuals: SupportingVisual[] = [
     title: "Residential frontage",
     summary:
       "Apartment buildings and landscaped edges shape the estate’s quieter internal streetscape.",
-    src: "/images/estate/estate-courtyard-clean.jpg",
+    image: estateCourtyardImage,
     alt: "Residential frontage at The Lombardy Lifestyle Estate.",
   },
   {
     title: "Pool and clubhouse",
     summary:
       "Shared leisure space remains part of the estate’s everyday residential offering.",
-    src: "/images/estate/pool-from-newsletter.png",
+    image: poolNewsletterImage,
     alt: "Pool and clubhouse area at The Lombardy Lifestyle Estate.",
   },
 ];
@@ -50,13 +56,13 @@ export function HeroEstate({ featuredNotice }: HeroEstateProps) {
         <div className="grid gap-6 xl:grid-cols-[minmax(0,1.08fr)_minmax(30rem,0.92fr)] xl:items-start">
           <article className="soft-card surface-feature radius-feature overflow-hidden p-3 xl:self-start">
             <div className="radius-panel relative min-h-[23rem] overflow-hidden sm:min-h-[30rem] xl:min-h-[35rem] 2xl:min-h-[38rem]">
-              <Image
-                src="/images/estate/estate-aerial-clean.jpg"
+              <StaticImage
+                {...estateAerialImage}
                 alt="Aerial view of The Lombardy Lifestyle Estate."
-                fill
+                pictureClassName="absolute inset-0"
                 priority
                 sizes="(max-width: 1279px) 100vw, 58vw"
-                className="object-cover"
+                className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[rgba(20,27,23,0.3)] via-[rgba(20,27,23,0.04)] to-transparent" />
               <div className="absolute left-4 top-4 sm:left-5 sm:top-5">
@@ -125,12 +131,12 @@ export function HeroEstate({ featuredNotice }: HeroEstateProps) {
                 >
                   <div className="radius-inset flex h-full gap-3 overflow-hidden">
                     <div className="relative min-h-[6.5rem] w-[6.75rem] shrink-0 overflow-hidden sm:w-[7.5rem]">
-                      <Image
-                        src={visual.src}
+                      <StaticImage
+                        {...visual.image}
                         alt={visual.alt}
-                        fill
+                        pictureClassName="absolute inset-0"
                         sizes="(max-width: 639px) 28vw, (max-width: 1023px) 18vw, 10vw"
-                        className="object-cover"
+                        className="h-full w-full object-cover"
                       />
                     </div>
                     <div className="flex min-w-0 flex-1 flex-col justify-center px-1 py-1 pr-2">

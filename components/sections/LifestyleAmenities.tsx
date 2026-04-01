@@ -1,6 +1,7 @@
-import Image from "next/image";
 import { amenities } from "@/content/amenities";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { poolNewsletterImage } from "@/lib/image-assets";
+import { StaticImage } from "@/components/ui/StaticImage";
 
 export function LifestyleAmenities() {
   return (
@@ -49,11 +50,12 @@ export function LifestyleAmenities() {
           <article className="soft-card surface-card radius-feature overflow-hidden p-3">
             <div className="grid gap-4 lg:grid-cols-[minmax(0,1.08fr)_minmax(18rem,0.92fr)]">
               <div className="radius-panel relative min-h-[20rem] overflow-hidden sm:min-h-[23rem] xl:min-h-[27rem]">
-                <Image
-                  src="/images/estate/pool-from-newsletter.png"
+                <StaticImage
+                  {...poolNewsletterImage}
                   alt="Estate pool image sourced from the March 2026 newsletter."
-                  fill
-                  className="object-cover"
+                  pictureClassName="absolute inset-0"
+                  sizes="(max-width: 1023px) 100vw, 48vw"
+                  className="h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[rgba(20,27,23,0.24)] via-transparent to-transparent" />
                 <div className="absolute inset-x-4 bottom-4 sm:inset-x-5 sm:bottom-5">

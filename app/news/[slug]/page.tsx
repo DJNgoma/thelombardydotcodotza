@@ -1,5 +1,6 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
+
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { StructuredData } from "@/components/layout/StructuredData";
@@ -98,12 +99,9 @@ export default async function NoticePage({ params }: NoticePageProps) {
                 {notice.meta.audience.join(", ")}
               </p>
             </div>
-            <Link
-              href="/news"
-              className="text-link mt-8"
-            >
+            <a href="/news" className="text-link mt-8">
               Back to all notices
-            </Link>
+            </a>
           </aside>
 
           <article className="soft-card surface-feature radius-panel px-6 py-8 sm:px-10">
