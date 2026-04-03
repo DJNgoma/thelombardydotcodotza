@@ -69,16 +69,19 @@ That means deployment is a fully static upload with no runtime server dependency
 
 ### Cloudflare Pages
 
+- Build system: `v3` when using Git integration
 - Framework preset: `Next.js`
 - Build command: `npm run build`
 - Output directory: `out`
-- Recommended Node version: `22`
+- Node.js version: use the repository pin from `.node-version` (`24.14.1`)
 
 Direct deploy command:
 
 ```bash
 npx wrangler pages deploy out --project-name thelombardy-co-za --branch main
 ```
+
+The direct deploy path bypasses the Pages build image and uploads the prebuilt static export directly.
 
 ## Owner support paths
 
