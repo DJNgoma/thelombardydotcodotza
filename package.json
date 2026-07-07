@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "check": "npm run lint && npm run typecheck && npm run coverage && npm run build",
+    "deploy:pages": "npx wrangler@4.79.0 pages deploy out --project-name thelombardy-co-za --branch main",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
