@@ -20,6 +20,8 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           ZONE_NAME: thelombardy.co.za
+          # Known zone id (zone list requires Zone.Zone:Read; DNS may still work with Zone.DNS)
+          ZONE_ID: 19026fa9d42e43b7d7cc11b5e69c7a71
           WWW_HOST: www.thelombardy.co.za
           PAGES_PROJECT: thelombardy-co-za
           CNAME_TARGET: thelombardy-co-za.pages.dev
@@ -40,20 +42,15 @@ jobs:
               "$@"
           }
 
-          echo "Looking up zone ${ZONE_NAME}..."
-          zone_json="$(api GET "/zones?name=${ZONE_NAME}")"
-          zone_id="$(node -e '
-            const j = JSON.parse(process.argv[1]);
-            if (!j.success || !j.result?.length) {
-              console.error(JSON.stringify(j, null, 2));
-              process.exit(1);
-            }
-            process.stdout.write(j.result[0].id);
-          ' "$zone_json")"
-          echo "Zone ID: ${zone_id}"
+          echo "Token verify..."
+          api GET "/user/tokens/verify" | node -e 'let d="";process.stdin.on("data",c=>d+=c);process.stdin.on("end",()=>console.log(d));'
+
+          zone_id="$ZONE_ID"
+          echo "Using zone ${ZONE_NAME} id=${zone_id}"
 
           echo "Checking existing DNS for ${WWW_HOST}..."
           dns_json="$(api GET "/zones/${zone_id}/dns_records?type=CNAME&name=${WWW_HOST}")"
+          echo "DNS list response (truncated): $(echo "$dns_json" | head -c 400)"
           record_id="$(node -e '
             const j = JSON.parse(process.argv[1]);
             if (!j.success) {
@@ -85,6 +82,7 @@ jobs:
             const j = JSON.parse(process.argv[1]);
             if (!j.success) {
               console.error(JSON.stringify(j, null, 2));
+              console.error("HINT: CLOUDFLARE_API_TOKEN needs Zone.DNS Edit on thelombardy.co.za (and ideally Zone.Zone Read).");
               process.exit(1);
             }
             const r = j.result;
