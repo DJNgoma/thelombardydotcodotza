@@ -69,19 +69,15 @@ That means deployment is a fully static upload with no runtime server dependency
 
 ### Cloudflare Pages
 
-- Build system: `v3` when using Git integration
-- Framework preset: `Next.js`
-- Build command: `npm run build`
-- Output directory: `out`
-- Node.js version: use the repository pin from `.node-version` (`24.14.1`)
+GitHub Actions is now the canonical production deployment path for this repo. Production deploys should run through `.github/workflows/ci.yml`, which validates the site first and only deploys from `main`.
 
-Direct deploy command:
+Direct upload is now a break-glass fallback only:
 
 ```bash
 npx wrangler pages deploy out --project-name thelombardy-co-za --branch main
 ```
 
-The direct deploy path bypasses the Pages build image and uploads the prebuilt static export directly.
+That path bypasses the normal release controls and should not be the routine production path.
 
 ## Owner support paths
 
